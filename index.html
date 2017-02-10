@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>Micitt</title>
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<link href="./css/dragit.css" rel="stylesheet"/>
+	<script src="./js/d3.v3.js"></script>
+	<script src="./js/dragit.js"></script> 
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/jquery/jquery-ui.js"></script>
+	<!-- bubble tree 
+	<script type="text/javascript" src="./bubbletree/assets/scripts/jquery.min.js"></script>
+	<script type="text/javascript" src="./bubbletree/assets/scripts/jquery-migrate.min.js"></script>
+	<script type="text/javascript" src="./bubbletree/assets/scripts/jquery.history.js"></script>
+	<script type="text/javascript" src="./bubbletree/assets/scripts/jquery.tooltip.min.js"></script>
+	<script type="text/javascript" src="./bubbletree/assets/scripts/raphael-min.js"></script>
+	<script type="text/javascript" src="./bubbletree/assets/scripts/Tween.js"></script>
+	<script type="text/javascript" src="./bubbletree/assets/scripts/bubbletree.js"></script>
+	<link rel="stylesheet" type="text/css" href="./bubbletree/assets/styles/bubbletree.css" />
+	<script type="text/javascript" src="./bubbletree/assets/styles/cofog.js"></script>
+	<script type="text/javascript" src="./js/appBubbleTree.js"></script>-->
+	<!-- highcharts -->
+	<script type="text/javascript" src="./js/highcharts/highcharts.js"></script>
+	<script type="text/javascript" src="./js/lineChart.js"></script>
+</head>
+<body>
+	<header>
+		<nav></nav>
+	</header>
+		<!--Pit -->
+		<section>
+			<div class="text-head"> 
+				<P class="title1">Lorem Ipsum</P>
+				<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+			</div>
+			<div class="cont-text">
+
+				<P class="title1">Lorem Ipsum</P>
+				<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+			</div>
+			<div class="cont-chart">
+				<div id="chart" style="margin:0px"></div>
+				<span id="min-time">2009</span> 
+				<input type="range" name="points" min="0" max="5" step="1" value="0" id="slider-time" style="width:550px">
+				<span id="max-time">2014</span>
+			</div>
+		</section>
+		<!-- Inversión económica -->
+		<section style=" height: 600px;" class="section2" >
+		<div class="text-head"> 
+				<P class="title1">Lorem Ipsum</P>
+				<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+			</div>
+			<div class="cont-text">
+				<P class="title1">Lorem Ipsum</P>
+				<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+			</div>
+			<div class="cont-chart" >
+				<style type="text/css"> #ifrBubble{top:0px; left:0px; bottom:0px; right:0px; width:95%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999; }</style><iframe name="ifrBubble" id="ifrBubble" src="./bubbletree.html" frameborder="0"></iframe>
+			</div>
+		</section>
+		<!-- comparación -->
+		<section>	
+		<div class="text-head"> 
+				<P class="title1">Lorem Ipsum</P>
+				<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+			</div>
+			<div class="cont-text">
+				<P class="title1">Lorem Ipsum</P>
+				<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+			</div>
+			<div class="cont-chart">
+				<div id="container" style="width: 600px; height: 400px; margin: 0 auto"></div>
+			</div>
+		</section>
+
+	<footer>
+	</footer>
+	<script type="text/javascript" src="./js/chart.js"></script>
+</body>
+</html>
