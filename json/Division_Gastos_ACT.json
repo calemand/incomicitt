@@ -1,0 +1,109 @@
+{
+	"amount": 1188.8,
+	"famount": 1188.8,
+	"label": "Actividades científicas y tecnológicas",
+	"level":1 ,
+	"shortLabel": "División de Gastos ACT",
+	"id": "root",
+	"children" : [
+		{
+			"amount": 359.414487369985,
+			"famount": 359.41,
+			"label": "SCT",
+			"level":2 ,
+			"shortLabel": "SCT",
+			"children" : [
+				{
+					"amount": 266.188930163447,
+					"famount": 266.18,
+					"label": "Sector Público",
+					"level":3 ,
+					"shortLabel": "Sector Público",
+					"children" : []
+				},
+				{
+					"amount": 89.3439821693908,
+					"famount": 89.34,
+					"label": "Sector Académico",
+					"level":3 ,
+					"shortLabel": "Sector Académico",
+					"children" : []
+				},
+				{
+					"amount": 3.8815750371471,
+					"famount": 3.88,
+					"label": "OSFL",
+					"level":3 ,
+					"shortLabel": "OSFL",
+					"children" : []
+				}
+			]
+		},
+		{
+			"amount": 645.273328380386,
+			"famount": 645.27,
+			"label": "EFCT",
+			"level":2 ,
+			"shortLabel": "EFCT",
+			"children" : [
+				{
+					"amount": 0,
+					"famount": 0,
+					"label": "Sector Público",
+					"level":3 ,
+					"shortLabel": "Sector Público",
+					"children" : []
+				},
+				{
+					"amount": 645.273328380386,
+					"famount": 645.27,
+					"label": "Sector Académico",
+					"level":3 ,
+					"shortLabel": "Sector Académico",
+					"children" : []
+				},
+				{
+					"amount": 0,
+					"famount": 0,
+					"label": "OSFL",
+					"level":3 ,
+					"shortLabel": "OSFL",
+					"children" : []
+				}
+			]
+		},
+		{
+			"amount": 183.851634472511,
+			"famount": 183.85,
+			"label": "Investigación y Desarrillo",
+			"level":2 ,
+			"shortLabel": "I+D",
+			"children" : [
+			{
+					"amount": 77.87147102526,
+					"famount": 77.87,
+					"label": "Sector Público",
+					"level":3 ,
+					"shortLabel": "Sector Público",
+					"children" : []
+				},
+				{
+					"amount": 103.553194650817,
+					"famount": 103.55,
+					"label": "Sector Académico",
+					"level":3 ,
+					"shortLabel": "Sector Académico",
+					"children" : []
+				},
+				{
+					"amount": 3.8815750371471,
+					"famount": 3.88,
+					"label": "OSFL",
+					"level":3 ,
+					"shortLabel": "OSFL",
+					"children" : []
+				}
+			]
+		}
+	]
+}
