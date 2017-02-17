@@ -4,31 +4,214 @@
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
-	<script type="text/javascript" src="./js/jquery/jquery-ui.js"></script>
-	<!-- bubble tree -->	
-	<script type="text/javascript" src="./bubbletree/assets/scripts/jquery.min.js"></script>
-	<script type="text/javascript" src="./bubbletree/assets/scripts/jquery-migrate.min.js"></script>
-	<script type="text/javascript" src="./bubbletree/assets/scripts/jquery.history.js"></script>
-	<script type="text/javascript" src="./bubbletree/assets/scripts/jquery.tooltip.min.js"></script>
-	<link rel="stylesheet" type="text/css" href="./bubbletree/assets/styles/jquery-ui-1.9.2.custom.min.css">
-	<link rel="stylesheet" type="text/css" href="./bubbletree/assets/styles/tipTip.css">
-	<link rel="stylesheet" type="text/css" href="./bubbletree/assets/styles/cra-map.css">
-	<script type="text/javascript" src="./bubbletree/assets/scripts/jquery.tipTip.minified.js"></script>
-	<script type="text/javascript" src="./bubbletree/assets/scripts/raphael-min.js"></script>
-	<script type="text/javascript" src="./bubbletree/assets/scripts/Tween.js"></script>
-	
-	<script type="text/javascript" src="./bubbletree/assets/scripts/bubbletree.js"></script>
-	<link rel="stylesheet" type="text/css" href="./bubbletree/assets/styles/bubbletree.css" />
-	<script type="text/javascript" src="./bubbletree/assets/scripts/jquery.qtip.min.js"></script>
-	<script type="text/javascript" src="./bubbletree/assets/styles/cofog.js"></script>
+    <script src="./bubbletree/assets/helper/jquery-v3.1.0.min.js" type="text/javascript"></script>
+    <script type="text/javascript" src="./bubbletree/assets/scripts/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="./bubbletree/assets/helper/jquery-ui/css/redmond/jquery-ui-1.9.2.custom.min.css">
+    <link rel="stylesheet" type="text/css" href="./bubbletree/assets/styles/tipTip.css">
+    <link rel="stylesheet" type="text/css" href="./bubbletree/assets/styles/cra-map.css">
+    <script type="text/javascript" src="./bubbletree/assets/scripts/jquery.tipTip.minified.js"></script>
+    <script type="text/javascript" src="./bubbletree/assets/scripts/jquery.blockUI.js"></script>
+    <script type="text/javascript" src="./bubbletree/assets/scripts/jquery.history.js"></script>
+    <script type="text/javascript" src="./bubbletree/assets/scripts/jquery.tooltip.min.js"></script>
+    <script type="text/javascript" src="./bubbletree/assets/scripts/raphael-min.js"></script>
+    <script type="text/javascript" src="./bubbletree/assets/scripts/vis4.js"></script>
+    <script type="text/javascript" src="./bubbletree/assets/scripts/Tween.js"></script>
+    <script type="text/javascript" src="./bubbletree/assets/scripts/bubbletree_temp.js"></script>
+    <script type="text/javascript" src="./bubbletree/assets/scripts/aggregator.js"></script>
+    <script type="text/javascript" src="./bubbletree/assets/scripts/jquery.qtip.min.js"></script>
+    <script type="text/javascript" src="./bubbletree/assets/styles/cofog.js"></script>
 	<script type="text/javascript" src="./js/appBubbleTree.js"></script>
+	<link rel="stylesheet" type="text/css" href="./bubbletree/assets/styles/styles.css">
 </head>
 <body>
-	<div class="cont-chart" >
+	
 		<div class="bubbletree-wrapper">
 			<div class="bubbletree"></div>
 		</div>
-	</div>
+	
+
+
+
 </body>
+   <style type="text/css">
+    .bubbletree-wrapper {
+       height: 100%;
+       width: 97% !important;
+       position: absolute;
+
+   }
+   .negro {
+    background-color: black !important;
+    color: #ffffff !important;
+}
+circle.drilldown:hover{
+   stroke-width:4px;
+   stroke: #aa17ed;
+}
+.bubbletree {
+ /*   position: relative;*/
+     margin-top: -15px;
+    height: 100%;
+    overflow: hidden;
+ /*   margin-bottom: 30px;
+    padding-bottom: 30px;*/
+    background-color: #ffffff;
+    background-image: -webkit-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+    background-image: -moz-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+    background-image: -ms-repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+    background-image: repeating-radial-gradient(center center, rgba(0,0,0,.2), rgba(0,0,0,.2) 1px, transparent 1px, transparent 100%);
+    -webkit-background-size: 5px 5px;
+    -moz-background-size: 5px 5px;
+}
+.negro {
+    background-color: black !important;
+    color: #ffffff !important;
+}
+.loading {
+    z-index: 1000;
+    position: absolute;
+    width: 700px;
+    height: 400px;
+}
+
+#header {
+    font-family: Graublau;
+    width: 200px;
+    position: absolute;
+    color: #333;
+    bottom: 20px;
+    right: 20px;
+    z-index: 1000;
+    text-align: left;
+}
+#menu {
+    font-family: Graublau;
+    width: 150px;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    font-size: 20px;
+    z-index: 1000;
+}
+#menu select {
+    font-family: Graublau;
+    font-size: 14px;
+}
+#header .title {
+    font-size: 32px;
+}
+#header .subtitle {
+    font-size: 17px;
+}
+.bubbletree-wrapper .tooltip {
+    max-width: 220px;
+    border: 1px solid #999;
+/*     position: absolute;
+   background: #fff;*/
+    z-index: 9999;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, .2);
+    border-radius: 2px;
+    font-family: sans-serif;
+    font-size: 13px;
+    padding: 4px;
+}
+.bubbletree-wrapper .tooltip .header {
+    padding: 6px;
+}
+.bubbletree-wrapper .tooltip .header .icon {
+    width: 38px;
+    height: 38px;
+    float: left;
+    background: #600;
+    border-radius: 19px;
+/*    margin-right: 8px;*/
+}
+.bubbletree .tooltip svg {
+    width: 100px;
+    height: 100px;
+    fill: black;
+    display: block;
+    position: relative;
+    visibility: visible;
+    z-index: 10000;
+}
+.bubbletree .tooltip svg path {
+    fill-opacity: 1;
+    visiblity: visible;
+}
+.bubbletree-wrapper .tooltip .row {
+    clear: both;
+    border-top: 1px solid #999;
+    padding: 6px;
+}
+.bubbletree circle{
+    padding: 30px;
+}
+#tooltip {
+    position: absolute;
+    z-index: 3000;
+    background-color: #fff;
+    padding: 5px;
+    border: 1px solid #999;
+    box-shadow: 3px 3px 0px rgba(0, 0, 0, .2);
+    border-radius: 2px;
+    font-family: sans-serif;
+    font-size: 13px;
+    padding: 4px;
+    max-width: 200px;
+}
+#tooltip .amount {
+    font-weight: bold;
+}
+#tooltip h3, #tooltip div {
+    margin: 0;
+}
+p#vtip #vtipArrow {
+    position: absolute;
+    top: -10px;
+    left: 5px
+}
+html, body {
+    margin: 0;
+    padding: 0;
+}
+body {
+    font-family: "Times New Roman", Times, serif;
+    display: inline-table;
+}
+/* Custom */
+.bubbletree .root .amount{
+    font-size: 24px;
+}
+.bubbletree .root .desc{
+    font-size: 18px;
+    color: #0657a4;
+}
+.bubbletree .label2 {
+    position: absolute;
+    color: #0657a4;
+    text-align: center;
+    cursor: default;
+    font-size: 11px;
+ /*   margin-top: 5px;*/
+}
+.bubbletree .desc {
+    font-size: 12px;
+    color: #FFFFFF;
+}
+.bubbletree .label {
+    position: absolute;
+    color: #fff;
+    text-align: center;
+    cursor: default;
+}
+.bubbletree .amount {
+    font-size: 15px;
+    color: #000000 !important;
+}
+.bubbletree .label2 span {
+    background: #fff;
+}
+
+</style>
 </html>

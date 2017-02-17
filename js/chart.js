@@ -7,7 +7,7 @@ function key(d) { return d.name; }
 // Chart dimensions.
 var margin = {top: 19.5, right: 19.5, bottom: 19.5, left: 39.5},
     width = 550 - margin.right,
-    height = 500 - margin.top - margin.bottom;
+    height = 475 - margin.top - margin.bottom;
 // Various scales. These domains make assumptions of data, naturally.
 var xScale = d3.scale.linear().domain([0, 400]).range([0, width]),
     yScale = d3.scale.linear().domain([10, 1500]).range([height, 0]),

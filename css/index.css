@@ -2,51 +2,96 @@ html {
  /*   font-family: tahoma;  */
 }
 body {
-    background: #f2f2f2;  For browsers that do not support gradients */
+  background: #f2f2f2;  For browsers that do not support gradients */
  /*   background: -webkit-linear-gradient(#cccccc, #f2f2f2); 
     background: -o-linear-gradient(#cccccc, #f2f2f2); 
     background: -moz-linear-gradient(#cccccc, #f2f2f2); 
     background: linear-gradient(#cccccc, #f2f2f2);  */
     color: #6e6e6e;
-}
-.cont-text, .cont-chart, .text-head{
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-.cont-text, .text-head{
+  }
+  .cont-text, .cont-chart, .text-head{
+    margin-top: 20px;
+    margin-bottom: 20px;
+  }
+  .cont-text, .text-head{
    box-shadow: 2px 2px 1px #888888;
-  background: #cccccc;
-  border-radius: 10px;
+   background: #cccccc;
+   border-radius: 10px;
 
-}
+ }
 
-.cont-text{
-	height: 500px;
-	float: left;
-	width: 30%;
-}
-.cont-chart{
-	height: 500px;
-	float: left;
-	width: 70%;
-}
-.title1{
-	margin: 10px 20px;
-	font-size: 20px;
-}
-.text1{
-	margin: 10px;
-	font-size: 16px;
-}
+ .cont-text{
+   height: 600px;
+   float: left;
+   width: 30%;
+ }
+ .cont-chart{
+   height: 600px;
+   float: left;
+   width: 70%;
+ }
+ .title1{
+   margin: 10px 20px;
+   font-size: 20px;
+ }
+ .text1{
+   margin: 10px;
+   font-size: 16px;
+ }
 
-.text-head{
+ .text-head{
   width: 100%;
   float: left;
 }
 
+.tab{
+ float: left;
+ margin: 0px 2px;
+ background: #d2e0ec;
+ padding: 15px;
+ border-radius: 5px 5px 0px 0px;
+ list-style:none;
+ box-shadow: 2px 2px 1px #888888;
+ color: #ccc;
+ font-weight: 600;
+}
+.tab:hover{
+  background: #26a37a;
+  color: #fff;
+}
+
+.tab:hover  >.btn-tab{
+  background: #26a37a;
+  color: #fff;
+}
+
+.btn-tab{
+  text-decoration: none;
+  color: #000;
+}
+
+.list-tab{
+  width: 100%;
+    float: left;
+    position: relative;
+}
+
+ul{
+  margin-top: 0px;
+}
+
+.active{
+  background: #1d5987;
+}
+.active >.btn-tab{
+ color: #fff;
+}
 
 
-
+.highcharts-box{
+  width: 100%;
+  height: 550px;
+}
 /* 
 *
 *
@@ -81,7 +126,7 @@ h1 {
   font-weight: 400;
 }
 #chart {
-  height: 506px;
+  height: 550px;
 }
 text {
   font-size: 10px;
@@ -109,10 +154,10 @@ text {
   fill: #aaa;
 }
 circle.pointTrajectory {
-   pointer-events: none;
-   stroke: lightgray;
-   fill: black;
-   opacity: 0;
+ pointer-events: none;
+ stroke: lightgray;
+ fill: black;
+ opacity: 0;
 }
 path.lineTrajectory {
   stroke-width: 2;
@@ -124,3 +169,4 @@ path.lineTrajectory {
 .selected {
   stroke-width: 4;
 }
+

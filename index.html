@@ -1,86 +1,128 @@
 <!DOCTYPE html>
 <html ng-app="app">
 <head>
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 	<title>Micitt</title>
 	<link rel="stylesheet" type="text/css" href="./css/index.css">
 	<link href="./css/dragit.css" rel="stylesheet"/>
 	<script src="./js/d3.v3.js"></script>
 	<script src="./js/dragit.js"></script> 
+
 	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
 	<script type="text/javascript" src="./js/jquery/jquery-ui.js"></script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
 	<script type="text/javascript" src="./js/angular/app.js"></script>
-	<!-- bubble tree 
-	<script type="text/javascript" src="./bubbletree/assets/scripts/jquery.min.js"></script>
-	<script type="text/javascript" src="./bubbletree/assets/scripts/jquery-migrate.min.js"></script>
-	<script type="text/javascript" src="./bubbletree/assets/scripts/jquery.history.js"></script>
-	<script type="text/javascript" src="./bubbletree/assets/scripts/jquery.tooltip.min.js"></script>
-	<script type="text/javascript" src="./bubbletree/assets/scripts/raphael-min.js"></script>
-	<script type="text/javascript" src="./bubbletree/assets/scripts/Tween.js"></script>
-	<script type="text/javascript" src="./bubbletree/assets/scripts/bubbletree.js"></script>
-	<link rel="stylesheet" type="text/css" href="./bubbletree/assets/styles/bubbletree.css" />
-	<script type="text/javascript" src="./bubbletree/assets/styles/cofog.js"></script>
-	<script type="text/javascript" src="./js/appBubbleTree.js"></script>-->
-	<!-- highcharts -->
 	<script type="text/javascript" src="./js/highcharts/highcharts.js"></script>
 	<script type="text/javascript" src="./js/lineChart.js"></script>
 </head>
 <body ng-controller="MainCtrl as ctrl" >
 	<header>
-	<div id="header"></div>
+		<div id="header"></div>
 		<nav></nav>
 		
 	</header>
-		<!--Pit -->
-		<section>
-			<div class="text-head"> 
-				<P class="title1">Lorem Ipsum</P>
-				<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+	<!--Pit -->
+	<section>
+		<div class="text-head"> 
+			<P class="title1">Lorem Ipsum</P>
+			<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+		</div>
+		<div class="cont-text">
+			<P class="title1">Lorem Ipsum</P>
+			<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+		</div>
+		<div class="cont-chart">
+			<div class="list-tab" >
+				<ul >
+					<li class="tab" ng-class="{ active: isSet(1) }">
+						<a class="btn-tab" href ng-click="setTab(1)">Gastos de ACT 1</a>
+					</li>
+					<li class="tab" class="tab" ng-class="{ active: isSet(2) }">
+						<a class="btn-tab" ng-click="setTab(2)">Gastos de ACT 2</a>
+					</li>
+					<li  class="tab" ng-class="{ active: isSet(3) }">
+						<a class="btn-tab" href ng-click="setTab(3)">Costa Rica vs Latinoamérica </a>
+					</li>
+				</ul>
 			</div>
-			<div class="cont-text">
+			<div >
+				<div ng-show="isSet(1)">
+					<style type="text/css"> #ifrBubble{top:0px; left:0px; bottom:0px; right:0px; width:95%; height: 600px; border:none; margin:0; padding:0; overflow:hidden; z-index:999999; }</style><iframe name="ifrBubble" id="ifrBubble" src="./bubbletree.html" frameborder="0"></iframe>
+				</div>
+				<div  ng-show="isSet(2)">
+					<div class="highcharts-box" id="container-ACT1"></div>
+				</div>
+				<div ng-show="isSet(3)">
+					<div class="highcharts-box" id="containerACTPaises"></div>
+				</div>
+			</div>
+		</div>
+	</section>
+	<!-- Inversión económica -->
+	<section style=" height: 600px;" class="section2" >
+		<div class="text-head"> 
+			<P class="title1">Lorem Ipsum</P>
+			<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+		</div>
+		<div class="cont-text">
+			<P class="title1">Lorem Ipsum</P>
+			<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+		</div>
+		<div class="cont-chart" >
+			<div id="chart"></div>
+			<span id="min-time">2009</span> 
+			<input type="range" name="points" min="0" max="5" step="1" value="0" id="slider-time" style=" width:475px">
+			<span id="max-time">2014</span>
+		</div>
+	</section>
+	<!-- comparación -->
+	<section>	
+		<div class="text-head"> 
+			<P class="title1">Lorem Ipsum</P>
+			<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+		</div>
+		<div class="cont-text">
+			<P class="title1">Lorem Ipsum</P>
+			<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+		</div>
+		<div class="cont-chart">
 
-				<P class="title1">Lorem Ipsum</P>
-				<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+			<div >
+				<div class="list-tab" >
+					<ul >
+						<li class="tab" ng-class="{ active: isSet2(1) }">
+							<a class="btn-tab" href ng-click="setTab2(1)">Cantidad de proyectos</a>
+						</li>
+						<li class="tab" class="tab" ng-class="{ active: isSet2(2) }">
+							<a class="btn-tab" ng-click="setTab2(2)">Profile</a>
+						</li>
+						<li  class="tab" ng-class="{ active: isSet2(3) }">
+							<a class="btn-tab" href ng-click="setTab2(3)">Messages</a>
+						</li>
+					</ul>
+				</div>
+				<div >
+
+					<div ng-show="isSet2(1)">
+						<div class="highcharts-box" id="container"></div>
+
+					</div>
+					<div ng-show="isSet2(2)">
+						<h1>Profile page</h1>
+						<p>Profile information</p>
+					</div>
+					<div ng-show="isSet2(3)">
+						<h1>Messages</h1>
+						<p> Some messages </p>
+					</div>
+					
+				</div>
 			</div>
-			<div class="cont-chart">
-				<div id="chart" style="margin:0px"></div>
-				<span id="min-time">2009</span> 
-				<input type="range" name="points" min="0" max="5" step="1" value="0" id="slider-time" style="width:550px">
-				<span id="max-time">2014</span>
-			</div>
-		</section>
-		<!-- Inversión económica -->
-		<section style=" height: 600px;" class="section2" >
-		<div class="text-head"> 
-				<P class="title1">Lorem Ipsum</P>
-				<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
-			</div>
-			<div class="cont-text">
-				<P class="title1">Lorem Ipsum</P>
-				<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
-			</div>
-			<div class="cont-chart" >
-				<style type="text/css"> #ifrBubble{top:0px; left:0px; bottom:0px; right:0px; width:95%; height:100%; border:none; margin:0; padding:0; overflow:hidden; z-index:999999; }</style><iframe name="ifrBubble" id="ifrBubble" src="./bubbletree.html" frameborder="0"></iframe>
-			</div>
-		</section>
-		<!-- comparación -->
-		<section>	
-		<div class="text-head"> 
-				<P class="title1">Lorem Ipsum</P>
-				<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
-			</div>
-			<div class="cont-text">
-				<P class="title1">Lorem Ipsum</P>
-				<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
-			</div>
-			<div class="cont-chart">
-				<div id="container" style="width: 600px; height: 400px; margin: 0 auto"></div>
-			</div>
-		</section>
+		</div>
+	</section>
 
 	<footer>
 		<div id="footer"></div>

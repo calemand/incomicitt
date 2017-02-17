@@ -3,36 +3,44 @@
 	"famount": 1188.8,
 	"label": "Actividades científicas y tecnológicas",
 	"level":1 ,
-	"shortLabel": "División de Gastos ACT",
+	"shortLabel": "ACT",
 	"id": "root",
+	"color": "#ffffff",
+	"stroke":"#0657a4",
+	"strokewidth": 10,
 	"children" : [
 		{
-			"amount": 359.414487369985,
+			"amount": 359.41,
 			"famount": 359.41,
-			"label": "SCT",
+			"label": "Servicios Científicos y Tecnológico",
 			"level":2 ,
 			"shortLabel": "SCT",
+			"color":"#0077bb",
+			"icon": "/bubbletree/assets/styles/icons/communication.svg",
 			"children" : [
 				{
-					"amount": 266.188930163447,
+					"amount": 266.18,
 					"famount": 266.18,
 					"label": "Sector Público",
 					"level":3 ,
-					"shortLabel": "Sector Público",
+					"shortLabel": "",
+
+					"icon":"./bubbletree/assets/styles/icons/Edificios.svg",
 					"children" : []
 				},
 				{
-					"amount": 89.3439821693908,
+					"amount": 89.34,
 					"famount": 89.34,
 					"label": "Sector Académico",
 					"level":3 ,
-					"shortLabel": "Sector Académico",
+					"shortLabel": "",
+					"icon":"./bubbletree/assets/styles/icons/books.svg",
 					"children" : []
 				},
 				{
-					"amount": 3.8815750371471,
+					"amount": 3.88,
 					"famount": 3.88,
-					"label": "OSFL",
+					"label": "Organizaciones sin Fines de Lucro",
 					"level":3 ,
 					"shortLabel": "OSFL",
 					"children" : []
@@ -40,11 +48,13 @@
 			]
 		},
 		{
-			"amount": 645.273328380386,
+			"amount": 645.27,
 			"famount": 645.27,
-			"label": "EFCT",
+			"label": "Enseñanza y Formación Científica y Tecnológica",
 			"level":2 ,
-			"shortLabel": "EFCT",
+			"shortLabel": "EFCT",	
+			"color":"#76aadb",	
+			"icon": "./bubbletree/assets/styles/icons/planning.svg",
 			"children" : [
 				{
 					"amount": 0,
@@ -52,20 +62,22 @@
 					"label": "Sector Público",
 					"level":3 ,
 					"shortLabel": "Sector Público",
+					"icon":"./bubbletree/assets/styles/icons/Edificios.svg",
 					"children" : []
 				},
 				{
-					"amount": 645.273328380386,
+					"amount": 645.27,
 					"famount": 645.27,
 					"label": "Sector Académico",
 					"level":3 ,
 					"shortLabel": "Sector Académico",
+					"icon":"./bubbletree/assets/styles/icons/books.svg",
 					"children" : []
 				},
 				{
 					"amount": 0,
 					"famount": 0,
-					"label": "OSFL",
+					"label": "Organizaciones sin Fines de Lucro",
 					"level":3 ,
 					"shortLabel": "OSFL",
 					"children" : []
@@ -73,32 +85,36 @@
 			]
 		},
 		{
-			"amount": 183.851634472511,
+			"amount": 183.85,
 			"famount": 183.85,
-			"label": "Investigación y Desarrillo",
+			"label": "Investigación y Desarrollo",
 			"level":2 ,
 			"shortLabel": "I+D",
+			"icon":"./bubbletree/assets/styles/icons/microscope.svg",
+			"color":"#008942",
 			"children" : [
-			{
-					"amount": 77.87147102526,
+				{
+					"amount": 77.87,
 					"famount": 77.87,
 					"label": "Sector Público",
 					"level":3 ,
 					"shortLabel": "Sector Público",
+					"icon":"./bubbletree/assets/styles/icons/Edificios.svg",
 					"children" : []
 				},
 				{
-					"amount": 103.553194650817,
+					"amount": 103.55,
 					"famount": 103.55,
 					"label": "Sector Académico",
 					"level":3 ,
 					"shortLabel": "Sector Académico",
+					"icon":"./bubbletree/assets/styles/icons/books.svg",
 					"children" : []
 				},
 				{
-					"amount": 3.8815750371471,
+					"amount": 3.88,
 					"famount": 3.88,
-					"label": "OSFL",
+					"label": "Organizaciones sin Fines de Lucro",
 					"level":3 ,
 					"shortLabel": "OSFL",
 					"children" : []
