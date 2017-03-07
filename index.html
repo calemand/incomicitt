@@ -19,125 +19,151 @@
 	<script type="text/javascript" src="./js/lineChart.js"></script>
 </head>
 <body ng-controller="MainCtrl as ctrl" >
+	
 	<header>
-		<div id="header"></div>
-		<nav></nav>
+		<iframe style="width:100%;  overflow:hidden" id="myIframe" src="http://www.micit.go.cr/junar/header.html" frameborder="0" frameborder="0" scrolling="no"></iframe>
 		
 	</header>
+	<div class="container-page"> 
 	<!--Pit -->
 	<section>
 		<div class="text-head"> 
-			<P class="title1">¿Qué es el ACT y por qué es tan importante para el futuro de Costa Rica?</P>
+			<div class="header-box">		
+				<P class="title1">¿Qué es el ACT y por qué es tan importante para el futuro de Costa Rica?</P>
+			</div>
 			<p class="text1">ACT son las siglas para “Actividades Científicas y Tecnológicas” y se definen como actividades que están estrechamente relacionadas con la producción, la promoción, la difusión y la aplicación de conocimientos científicos y técnicos.</p>
 			<p class = "text1">Estas actividades comprenden la investigación y desarrollo (I+D), la enseñanza y la formación científica y tecnológica (EFCT) y los servicios científicos y tecnológicos (SCT).</p>
 		</div>
 		<div class="cont-text">
+		<div class="header-box">
 			<P class="title1">División del ACT</P>
+			</div>
 			<p class="text1">Investigación y el desarrollo experimental (I+D): 
-Comprenden el trabajo creativo llevado a cabo para incrementar el volumen de conocimientos, incluido el conocimiento de la humanidad la cultura y la sociedad, y el uso de esos conocimientos para crear nuevas aplicaciones. Es decisivo para estos trabajos la presencia de la creatividad e innovación, por lo que existen cuatro elementos esenciales que las caracterizan:</p>
-<p>i) El elemento de creatividad. 
-ii) El empleo del método científico. 
-iii) El elemento de novedad o innovación. 
-iv) La generación de nuevos conocimientos
-</p>
-<p>Enseñanza y Formación Científica y Tecnológica (EFCT): Incluye las actividades de enseñanza y de formación de nivel superior no universitario especializado, de enseñanza y de formación de nivel superior que conduzcan a la obtención de un título profesional y grado académico universitario, de formación y de perfeccionamiento post-universitarios y de formación permanente organizada de científicos e ingenieros.</p>
-<p>Servicios Científicos y Tecnológicos (SCT): Actividades relacionadas con la investigación y el desarrollo experimental que contribuyen a la generación, la difusión y la aplicación de los conocimientos científicos y tecnológicos. A continuación se detallan algunas de estas:
-Los servicios científicos y tecnológicos prestados por las bibliotecas, los archivos, los centros de información y documentación, los servicios de consulta, los centros de congresos científicos, los bancos de datos y los servicios de tratamiento de la información.**** FALTA****</p>
-</p>
-		</div>
-		<div class="cont-chart">
-			<div class="list-tab" >
-				<ul >
-					<li class="tab" ng-class="{ active: isSet(1) }">
-						<a class="btn-tab" href ng-click="setTab(1)">Gastos de ACT 1</a>
-					</li>
-					<li class="tab" class="tab" ng-class="{ active: isSet(2) }">
-						<a class="btn-tab" ng-click="setTab(2)">Gastos de ACT 2</a>
-					</li>
-					<li  class="tab" ng-class="{ active: isSet(3) }">
-						<a class="btn-tab" href ng-click="setTab(3)">Costa Rica vs Latinoamérica </a>
-					</li>
-				</ul>
+				Comprenden el trabajo creativo llevado a cabo para incrementar el volumen de conocimientos, incluido el conocimiento de la humanidad la cultura y la sociedad, y el uso de esos conocimientos para crear nuevas aplicaciones. Es decisivo para estos trabajos la presencia de la creatividad e innovación, por lo que existen cuatro elementos esenciales que las caracterizan:</p>
+				<p class="text1">i) El elemento de creatividad. 
+					ii) El empleo del método científico. 
+					iii) El elemento de novedad o innovación. 
+					iv) La generación de nuevos conocimientos
+				</p>
+				<p class="text1">Enseñanza y Formación Científica y Tecnológica (EFCT): Incluye las actividades de enseñanza y de formación de nivel superior no universitario especializado, de enseñanza y de formación de nivel superior que conduzcan a la obtención de un título profesional y grado académico universitario, de formación y de perfeccionamiento post-universitarios y de formación permanente organizada de científicos e ingenieros.</p>
+				<p class="text1">Servicios Científicos y Tecnológicos (SCT): Actividades relacionadas con la investigación y el desarrollo experimental que contribuyen a la generación, la difusión y la aplicación de los conocimientos científicos y tecnológicos. A continuación se detallan algunas de estas:
+					Los servicios científicos y tecnológicos prestados por las bibliotecas, los archivos, los centros de información y documentación, los servicios de consulta, los centros de congresos científicos, los bancos de datos y los servicios de tratamiento de la información.**** FALTA****</p>
+			
 			</div>
-			<div >
-				<div ng-show="isSet(1)">
-					<style type="text/css"> #ifrBubble{top:0px; left:0px; bottom:0px; right:0px; width:95%; height: 600px; border:none; margin:0; padding:0; overflow:hidden; z-index:999999; }</style><iframe name="ifrBubble" id="ifrBubble" src="./bubbletree.html" frameborder="0"></iframe>
-				</div>
-				<div  ng-show="isSet(2)">
-					<div class="highcharts-box" id="container-ACT1"></div>
-				</div>
-				<div ng-show="isSet(3)">
-					<div class="highcharts-box" id="containerACTPaises"></div>
-				</div>
-			</div>
-		</div>
-	</section>
-	<!-- Inversión económica -->
-	<section style=" height: 600px;" class="section2" >
-		<div class="text-head"> 
-			<P class="title1">Inversión económica</P>
-			<p class="text1">El aumento al presupuesto de ciencia y tecnología viene en paralelo con cada uno de sus componentes. Se le da más prioridad a la educación, luego a los servicios y por último a la investigación y desarrollo.  Esto responde a la intención de formar profesionales en áreas técnicas y suplir la creciente demanda etc*** SE PUEDE PONER UNA REFERENCIA A LA FORMACION DE PROFESIONALES EN AREAS TECNICAS***</p>
-		</div>
-		<div class="cont-text">
-			<P class="title1">Costa Rica vs Latinoamérica</P>
-			<p class="text1">A lo largo del tiempo, el gobierno de Costa Rica ha invertido desde los años 90 entre 0.72% y el 2% de su presupuesto en ciencia y tecnología. Para ponerlo en perspectiva, Costa Rica se sitúa entre los países mejor posicionados del área en este sentido. </p>
-		</div>
-		<div class="cont-chart" >
-			<div id="chart"></div>
-			<span id="min-time">2009</span> 
-			<input type="range" name="points" min="0" max="5" step="1" value="0" id="slider-time" style=" width:475px">
-			<span id="max-time">2014</span>
-		</div>
-	</section>
-	<!-- comparación -->
-	<section>	
-		<div class="text-head"> 
-			<P class="title1">Lorem Ipsum</P>
-			<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
-		</div>
-		<div class="cont-text">
-			<P class="title1">Lorem Ipsum</P>
-			<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
-		</div>
-		<div class="cont-chart">
-
-			<div >
+			<div class="cont-chart">
 				<div class="list-tab" >
 					<ul >
-						<li class="tab" ng-class="{ active: isSet2(1) }">
-							<a class="btn-tab" href ng-click="setTab2(1)">Cantidad de proyectos</a>
-						</li>
-						<li class="tab" class="tab" ng-class="{ active: isSet2(2) }">
-							<a class="btn-tab" ng-click="setTab2(2)">Profile</a>
-						</li>
-						<li  class="tab" ng-class="{ active: isSet2(3) }">
-							<a class="btn-tab" href ng-click="setTab2(3)">Messages</a>
+						<li class="tab" >
+							<a class="btn-tab" href ng-click="setTab(1)">Gastos de ACT 1</a>
 						</li>
 					</ul>
 				</div>
 				<div >
-
-					<div ng-show="isSet2(1)">
-						<div class="highcharts-box" id="container"></div>
-
+					<div >
+						<style type="text/css"> #ifrBubble{top:0px; left:0px; bottom:0px; right:0px; width:95%; height: 600px; border:none; margin:0; padding:0; overflow:hidden; z-index:999999; }</style><iframe name="ifrBubble" id="ifrBubble" src="./bubbletree.html" frameborder="0"></iframe>
 					</div>
-					<div ng-show="isSet2(2)">
-						<h1>Profile page</h1>
-						<p>Profile information</p>
-					</div>
-					<div ng-show="isSet2(3)">
-						<h1>Messages</h1>
-						<p> Some messages </p>
-					</div>
-					
+		
 				</div>
 			</div>
-		</div>
-	</section>
+		</section>
+		<!-- Inversión económica -->
+		<section style=" height: 600px;" class="section2" >
+			<div class="text-head"> 
+			<div class="header-box">
+				<P class="title1">Inversión económica</P>
+				</div>
+				<p class="text1">El aumento al presupuesto de ciencia y tecnología viene en paralelo con cada uno de sus componentes. Se le da más prioridad a la educación, luego a los servicios y por último a la investigación y desarrollo.  Esto responde a la intención de formar profesionales en áreas técnicas y suplir la creciente demanda etc*** SE PUEDE PONER UNA REFERENCIA A LA FORMACION DE PROFESIONALES EN AREAS TECNICAS***</p>
+			</div>
+			<div class="cont-text">
+			<div class="header-box">
+				<P class="title1">Costa Rica vs Latinoamérica</P>
+				</div>
+				<p class="text1">A lo largo del tiempo, el gobierno de Costa Rica ha invertido desde los años 90 entre 0.72% y el 2% de su presupuesto en ciencia y tecnología. Para ponerlo en perspectiva, Costa Rica se sitúa entre los países mejor posicionados del área en este sentido. </p>
+			</div>
 
-	<footer>
-		<div id="footer"></div>
-	</footer>
-	<script type="text/javascript" src="./js/chart.js"></script>
-</body>
-</html>
+			<div class="cont-chart">
+				<div class="list-tab" >
+					<ul >
+				<li class="tab" class="tab" ng-class="{ active: isSet(1) }">
+							<a class="btn-tab" ng-click="setTab(1)">(ACT) + (I+D)</a>
+						</li>
+						<li class="tab" class="tab" ng-class="{ active: isSet(2) }">
+							<a class="btn-tab" ng-click="setTab(2)">Gastos de ACT 2</a>
+						</li>
+						<li  class="tab" ng-class="{ active: isSet(3) }">
+							<a class="btn-tab" href ng-click="setTab(3)">Costa Rica vs Latinoamérica </a>
+						</li>
+					</ul>
+				</div>
+				<div >
+				<div  ng-show="isSet(1)">
+						<div id="chart"></div>
+				<span id="min-time">2009</span> 
+				<input type="range" name="points" min="0" max="5" step="1" value="0" id="slider-time" style=" width:475px">
+				<span id="max-time">2014</span>
+					</div>
+					<div  ng-show="isSet(2)">
+						<div class="highcharts-box" id="container-ACT1"></div>
+					</div>
+					<div ng-show="isSet(3)">
+						<div class="highcharts-box" id="containerACTPaises"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- comparación -->
+		<section>	
+			<div class="text-head"> 
+			
+			<div class="header-box">
+				<P class="title1">Lorem Ipsum</P>
+				</div>
+				<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+			</div>
+			<div class="cont-text">
+			<div class="header-box">
+				<P class="title1">Lorem Ipsum</P>
+				</div>
+				<p class="text1">Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Donec quam felis, ultricies nec, pellentesque eu, pretium quis, sem. Nulla consequat massa quis enim. Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu. In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo. Nullam dictum felis eu pede mollis pretium. Integer tincidunt. Cras dapibus. Vivamus elementum semper nisi. Aenean vulputate eleifend tellus. Aenean leo ligula, porttitor eu, consequat vitae, eleifend ac, enim. Aliquam lorem ante, dapibus in, viverra quis, feugiat a, tellus. Phasellus viverra nulla ut metus varius laoreet.</p>
+			</div>
+			<div class="cont-chart">
+
+				<div >
+					<div class="list-tab" >
+						<ul >
+							<li class="tab" ng-class="{ active: isSet2(1) }">
+								<a class="btn-tab" href ng-click="setTab2(1)">Cantidad de proyectos</a>
+							</li>
+							<li class="tab" class="tab" ng-class="{ active: isSet2(2) }">
+								<a class="btn-tab" ng-click="setTab2(2)">Profile</a>
+							</li>
+							<li  class="tab" ng-class="{ active: isSet2(3) }">
+								<a class="btn-tab" href ng-click="setTab2(3)">Messages</a>
+							</li>
+						</ul>
+					</div>
+					<div >
+
+						<div ng-show="isSet2(1)">
+							<div class="highcharts-box" id="container"></div>
+
+						</div>
+						<div ng-show="isSet2(2)">
+							<h1>Profile page</h1>
+							<p>Profile information</p>
+						</div>
+						<div ng-show="isSet2(3)">
+							<h1>Messages</h1>
+							<p> Some messages </p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+		<iframe style="width:100%; height: 200px; overflow:hidden" id="myIframe" src="http://www.micit.go.cr/junar/footer.html" frameborder="0" frameborder="0" scrolling="no"></iframe>
+
+		<script type="text/javascript" src="./js/chart.js"></script>
+	</body>
+	</html>
