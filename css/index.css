@@ -114,6 +114,7 @@ p{
     border-top-right-radius: 10px;
     padding-top: 5px;
     padding-bottom: 5px;
+    border-bottom: solid 3px #76aadb;
 }
  .header-box p {
       color: #fff;
