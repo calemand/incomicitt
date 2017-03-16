@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html ng-app="app">
+<head>
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta charset="utf-8">
+	<title>Micitt</title>
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
+	<link href="./css/dragit.css" rel="stylesheet"/>
+	<script src="./js/d3.v3.js"></script>
+	<script src="./js/dragit.js"></script> 
+
+	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/jquery/jquery-ui.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script type="text/javascript" src="./js/angular/app.js"></script>
+	<script type="text/javascript" src="./js/highcharts/highcharts.js"></script>
+	<script type="text/javascript" src="./js/lineChart.js"></script>
+</head>
+<body ng-controller="MainCtrl as ctrl" >
+	
+	<header>
+		<iframe style="width:100%;  overflow:hidden" id="myIframe" src="http://www.micit.go.cr/junar/header.html" frameborder="0" frameborder="0" scrolling="no"></iframe>
+		
+	</header>
+	<div class="container-page"> 
+	<!--Pit -->
+	<section>
+		<div class="text-head"> 
+			<div class="header-box">		
+				<P class="title1">Innovación en el sector empresarial.</P>
+			</div>
+			<p class="text1">Cada año, el Ministerio de Ciencia y Tecnología realiza un estudio sobre ciencia, tecnología e innovación. Para estudiar al sector empresarial, desde el año 2006 hasta el 2013 tomaron en cuenta los sectores de manufactura, energía y telecomunicaciones y sector servicios.</p>
+			<p class="text1">Los procesos de innovación de las empresas del sector Manufactura, energía y telecomunicaciones y servicios se estudian mediante diversos indicadores relacionados con la innovación que realizan, las actividades de innovación, las fuentes de financiamiento e información que utilizan, las vinculaciones generadas con otros actores del Sistemas de Innovación, entre otros.</p>
+		
+		</div>
+		<div class="cont-text">
+		<div class="header-box">
+			<P class="title1">Actividades de Innovación</P>
+			<p class="text1">Las empresas costarricenses del sector manufactura, energía y telecomunicaciones, han venido consolidando una cultura de fomento de la innovación, mediante esfuerzos en distintas actividades orientadas a lograr innovaciones.</p>
+			<P class="title1">Números significativos:</P>
+			</div>
+			<p class="text1">93.2%</p>
+			<p class="text1">Empresas del sector que han realizado al menos algún tipo de actividad de innovación en los últimos años.</p>
+			<p class="text1">70%</p>
+			<p class="text1">Porcentaje de esas empresas ha invertido en actividades de Investigación y Desarrollo interna.</p>
+			<p class="text1">66,0%</p>
+			<p class="text1">Invierten en procesos de capacitación para fomentar innovaciones.</p>
+			<p class="text1">$170.000.000</p>
+			<p class="text1">Inversión en actividades de innovación en las empresas del sector.</p>
+			
+			<p class="text1">Cabe destacar además que las actividades realizadas en innovación comprenden en primer lugar Investigación y Desarrollo, pero también capacitaciones (66.6% de las empresas del sector las realizan) y compra de maquinaria y equipo (57.4%). Los esfuerzos en I+D fueron principalmente dirigidos hacia mejoras en los productos, seguido de procesos y comercialización.</p>
+			
+			</div>
+			<div class="cont-chart">
+				<div class="list-tab" >
+					<ul >
+						<li class="tab" >
+							<a class="btn-tab" href ng-click="setTab(1)">Gastos de ACT 1</a>
+						</li>
+					</ul>
+				</div>
+				<div >
+					<div >
+						<style type="text/css"> #ifrBubble{top:0px; left:0px; bottom:0px; right:0px; width:95%; height: 600px; border:none; margin:0; padding:0; overflow:hidden; z-index:999999; }</style><iframe name="ifrBubble" id="ifrBubble" src="./bubbletree.html" frameborder="0"></iframe>
+					</div>
+		
+				</div>
+			</div>
+		</section>
+		<!-- Inversión económica -->
+		<section style=" height: 600px;" class="section2" >
+			<div class="text-head"> 
+			<div class="header-box">
+				
+				</div>
+				
+				
+			</div>
+			<div class="cont-text">
+			<div class="header-box">
+				<P class="title1">Impacto de las Innovaciones en el sector empresarial.</P>
+				</div>
+				<p class="text1">Según una encuesta que el ministerio hizo a 416 empresas, se enlistan los impactos que generaron sus innovaciones en productos, procesos, cambios organizacionales, comercialización y otras áreas. </p>
+				
+			</div>
+
+			<div class="cont-chart">
+				<div class="list-tab" >
+					<ul >
+				<li class="tab" class="tab" ng-class="{ active: isSet(1) }">
+							<a class="btn-tab" ng-click="setTab(1)">(ACT) + (I+D)</a>
+						</li>
+						<li class="tab" class="tab" ng-class="{ active: isSet(2) }">
+							<a class="btn-tab" ng-click="setTab(2)">Gastos de ACT 2</a>
+						</li>
+						<li  class="tab" ng-class="{ active: isSet(3) }">
+							<a class="btn-tab" href ng-click="setTab(3)">Costa Rica vs Latinoamérica </a>
+						</li>
+					</ul>
+				</div>
+				<div >
+				<div  ng-show="isSet(1)">
+						<div id="chart"></div>
+				<span id="min-time">2009</span> 
+				<input type="range" name="points" min="0" max="5" step="1" value="0" id="slider-time" style=" width:475px">
+				<span id="max-time">2014</span>
+					</div>
+					<div  ng-show="isSet(2)">
+						<div class="highcharts-box" id="container-ACT1"></div>
+					</div>
+					<div ng-show="isSet(3)">
+						<div class="highcharts-box" id="containerACTPaises"></div>
+					</div>
+				</div>
+			</div>
+		</section>
+		<!-- comparación -->
+		<section>	
+			<div class="text-head"> 
+			
+			<div class="header-box">
+				</div>
+				<p class="text1">Aun así, es muy rescatable que la gran mayoría de empresas sigue creyendo en la relevancia de la innovación, aunque sean solamente cambios a nivel de empresa, y se abre así la opción de generar políticas de apoyo para que esas empresas puedan aspirar a innovaciones de mayor intensidad y novedad.</p>
+				<p class="text1">El logro de este tipo de impactos positivos contribuye a la cultura de la innovación, pues las empresas saben que haciendo los esfuerzos correspondientes, pueden lograr los resultados deseados. Otro hecho notable es que las empresas tratan de mejorar varios aspectos con las innovaciones, estableciendo prioridades a partir de sus intereses o necesidades más urgentes.</p>
+				
+			</div>
+			<div class="cont-text">
+			<div class="header-box">
+				<P class="title1">Investigación y desarrollo en las empresas.</P>
+				</div>
+				<p class="text1">La apuesta que hacen las empresas por impulsar la innovación, se refleja en los porcentajes de I+D respecto a las ventas. Hay un incremento significativo en los últimos años, para todos los tamaños de empresa. Esto refleja, nuevamente, la cultura más posicionada de invertir en actividades de innovación y, en particular, en I+D.</p>
+			</div>
+			<div class="cont-chart">
+				<div class='tableauPlaceholder' id='viz1489600544780' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;nd&#47;ndiceGlobaldeInnovacin&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='ndiceGlobaldeInnovacin&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;nd&#47;ndiceGlobaldeInnovacin&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1489600544780');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1124px';vizElement.style.minHeight='629px';vizElement.style.maxHeight='929px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
+				<div >
+					<div class="list-tab" >
+						<ul >
+							<li class="tab" ng-class="{ active: isSet2(1) }">
+								<a class="btn-tab" href ng-click="setTab2(1)">Cantidad de proyectos</a>
+							</li>
+							<li class="tab" class="tab" ng-class="{ active: isSet2(2) }">
+								<a class="btn-tab" ng-click="setTab2(2)">Profile</a>
+							</li>
+							<li  class="tab" ng-class="{ active: isSet2(3) }">
+								<a class="btn-tab" href ng-click="setTab2(3)">Messages</a>
+							</li>
+						</ul>
+					</div>
+					<div >
+			
+				</div>
+				<P class="title1">Obstáculos para innovar e invertir en I+D.</P>
+				<p class="text1">Son múltiples los factores que han obstaculizado la innovación tanto en empresas que innovaron como en las que no innovaron. Algunos factores no tienen mucho peso en la decisión, como el haber innovado recientemente, lo cual parece resaltar que las empresas tienen una cultura constante de innovación. </p>
+				<p class="text1">Un factor de peso para más del 40,0% de las empresas que no lograron innovaciones, es la falta de recursos financieros propios.</p>
+				<p class="text1">******GRAFICO FACTORES NO INNOVACION*******</p>
+				<p class="text1">Uno de los principales obstáculos que las empresas entrevistadas enfrentan, es la falta de información sobre innovación, principalmente se obtiene desde internet. No perciben a las universidades o a los centros de investigación y desarrollo tecnológico, como fuentes de información para sus innovaciones. Parece un hecho lamentable, en el tanto el porcentaje mayor de I+D en el país, proviene de ese tipo de entidades, por lo que se hace evidente que es de vital importancia mejorar las vinculaciones con el sector empresarial.</p>
+				<P class="title1">Investigación y Desarrollo.</P>
+				<p class="text1">Son diferentes tipos de causas y sólo el hecho de que I+D sea muy cara afecta a más de la mitad de las empresas que sí hacen ese tipo de inversión. También la falta de acceso a crédito es mencionada por prácticamente la mitad de las empresas que sí hacen I+D.</p>
+				
+						<div ng-show="isSet2(1)">
+							<div class="highcharts-box" id="container"></div>
+
+						</div>
+						<div ng-show="isSet2(2)">
+							<h1>Profile page</h1>
+							<p>Profile information</p>
+						</div>
+						<div ng-show="isSet2(3)">
+							<h1>Messages</h1>
+							<p> Some messages </p>
+						</div>
+
+					</div>
+				</div>
+			</div>
+		</section>
+	</div>
+		<iframe style="width:100%; height: 200px; overflow:hidden" id="myIframe" src="http://www.micit.go.cr/junar/footer.html" frameborder="0" frameborder="0" scrolling="no"></iframe>
+
+		<script type="text/javascript" src="./js/chart.js"></script>
+	</body>
+	</html>
