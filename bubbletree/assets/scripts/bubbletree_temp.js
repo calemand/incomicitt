@@ -788,6 +788,13 @@ var BubbleTree = function (config, onHover, onUnHover) {
     };
 
     me.onNodeClick = function (node) {
+        console.log(node);
+        if(node.description!= undefined ){
+        document.getElementById("label").innerHTML = node.label;
+        document.getElementById("shortLabel").innerHTML = node.shortLabel;
+        document.getElementById("description").innerHTML = node.description;
+        document.getElementById("icon").src = node.icon;
+    }
         if ($.isFunction(me.config.nodeClickCallback)) {
             me.config.nodeClickCallback(node);
         }
@@ -1385,7 +1392,7 @@ BubbleTree.Bubbles.Icon = function (node, bubblechart, origin, radius, angle, co
      * adds all visible elements to the page
      */
     me.show = function () {
-        console.log(this);
+     //   console.log(this);
         var me = this, i, cx = me.pos.x, icon, cy = me.pos.y, r = Math.max(5, me.bubbleRad * me.bc.bubbleScale);
 
         me.circle = me.paper.circle(cx, cy, r)
@@ -1470,7 +1477,6 @@ BubbleTree.Bubbles.Icon = function (node, bubblechart, origin, radius, angle, co
 
         path = me.paper.path(me.iconPathData);
         path.attr({fill: "#fff", stroke: "none"}).translate(-50, -50);
-        console.log();
         me.iconPaths.push(path);
         //me.mgroup.addMember(path.node);
 

@@ -20,6 +20,7 @@ app.controller("MainCtrl", function($scope) {
   $scope.isSet2 = function(tabNum){
     return $scope.tab2 === tabNum;
   };
+  
   chartACT();
   chartACTPais() 
   function chartACT() {
@@ -112,7 +113,7 @@ app.controller("MainCtrl", function($scope) {
         text: 'PIB vs ACT Paises',
       },
       xAxis: {
-        categories: ['1990' , '1991',  '1992',  '1993',  '1994',  '1995',  '1996',  '1997',  '1998',  '1999',  '2000',  '2001',  '2002',  '2003',  '2004',  '2005',  '2006',  '2007',  '2008',  '2009',  '2010',  '2011',  '2012',  '2013',  '2014']
+        categories: [  '2006',  '2007',  '2008',  '2009',  '2010',  '2011',  '2012',  '2013',  '2014']
       },
       yAxis: {
         title: {
@@ -124,12 +125,12 @@ app.controller("MainCtrl", function($scope) {
           color: '#808080'
         }]
       },
-      tooltip: { 
+  /*      tooltip: { 
         borderRadius: 10,
         borderWidth: 3,
         shared: true,
         useHTML: true,
-        formatter: function () {
+      formatter: function () {
           var s = "<center><strong>Año "+this.x+"</center></strong><table>";
 
           $.each(this.points, function () {
@@ -139,12 +140,10 @@ app.controller("MainCtrl", function($scope) {
               
             }
           });
-
-
           return s+='</table>';
         },
         valueDecimals: 2
-      },
+      },*/
       plotOptions: {
         spline: {
           marker: {
@@ -156,33 +155,17 @@ app.controller("MainCtrl", function($scope) {
       },
       series: 
       [
-      {visible: false, name:'Argentina',  color:'#404040', data:[    0.33, 0.34, 0.38, 0.43, 0.44, 0.49, 0.5,  0.5,  0.5,  0.52, 0.5,  0.48, 0.44, 0.46, 0.45, 0.48, 0.52, 0.55, 0.54, 0.63, 0.61, 0.61, 0.68, 0.66, 0.64, ]},
-      {visible: false, name:'Bolivia',  color:'#404040', data:[   null, null, null, null, null, null, null, 0.58, 0.54, 0.55, 0.54, 0.52, 0.51, null, null, null, null, null, null, 0.16, null, null, null, null, null, ]},
-      {visible: false, name:'Brasil',  color:'#404040', data:[    null, null, null, null, null, null, null, null, null, null, 1.3,  1.33, 1.3,  1.31, 1.3,  1.3,  1.27, 1.38, 1.46, 1.54, 1.6,  1.56, 1.62, 1.61, null, ]},
-      {visible: false, name:'Canadá',  color:'#404040', data:[    null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
-      {visible: false, name:'Chile',  color:'#404040', data:[   null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
-      {visible: false, name:'Colombia',  color:'#404040', data:[    null, null, null, null, null, 0.55, 0.56, 0.53, null, null, 0.31, 0.28, 0.31, 0.41, 0.43, 0.44, 0.4,  0.46, 0.49, 0.45, 0.47, 0.48, 0.54, 0.61, 0.64, ]},
-      {name:'Costa Rica',  color:'#000099', data:[    0.73, 0.81, 0.97, 1.11, 0.97, 0.98, 1.49, 1.4,  1.28, 0.9,  0.93, null, null, 0.84, 1,  null, 1.33, 1.33, 1.39, 1.97, 1.86, 1.77, 1.98, 2.01, null, ]},
-      {visible: false, name:'Cuba',  color:'#404040', data:[    1.09, 1.16, 1.66, 1.32, 0.98, 0.87, 0.78, 0.82, 0.93, 1.01, 0.89, 0.98, 0.88, 0.94, 0.93, 0.84, 0.69, 0.72, 0.83, 1.02, 1.01, 0.45, 0.59, 0.79, 0.71, ]},
-      {visible: false, name:'Ecuador',  color:'#404040', data:[   null, null, null, null, null, null, 0.2,  0.26, 0.27, null, null, 0.15, 0.17, 0.18, null, null, 0.2,  0.23, 0.38, 0.44, 0.47, 0.4,  null, null, null, ]},
-      {visible: false, name:'España',  color:'#404040', data:[    null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
-      {visible: false, name:'Guatemala',  color:'#404040', data:[   null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
-      {visible: false, name:'Honduras',  color:'#404040', data:[    null, null, null, null, null, null, null, null, null, null, 0.05, 0.05, 0.05, 0.05, null, null, null, null, null, null, null, null, null, null, null, ]},
-      {visible: false, name:'Jamaica',  color:'#404040', data:[   null, null, null, null, null, null, null, null, null, null, null, 0.73, 0.74, null, null, null, null, null, null, null, null, null, null, null, null, ]},
-      {visible: false, name:'México',  color:'#404040', data:[    0.28, 0.33, 0.32, 0.37, 0.41, 0.35, 0.35, 0.42, 0.46, 0.41, 0.42, 0.41, 0.36, 0.73, 0.69, 0.71, 0.65, 0.65, 0.69, 0.76, 0.75, 0.74, 0.73, 0.75, 0.87, ]},
-      {visible: false, name:'Nicaragua',  color:'#404040', data:[   null, null, null, null, null, null, null, 0.09, null, null, null, null, 0.06, null, 0.06, null, null, null, null, null, null, null, null, null, null, ]},
-      {visible: false, name:'Panamá',  color:'#404040', data:[    0.63, 0.67, 0.63, 0.71, 0.72, 0.76, 0.85, 0.92, 0.89, 0.94, 0.91, 1.03, 0.85, 0.78, 0.91, 0.77, 0.76, 0.47, 0.46, 0.39, 0.41, 0.51, 0.31, 0.35, null, ]},
-      {visible: false, name:'Perú',  color:'#404040', data:[    null, null, null, 0.76, 0.64, 0.88, 0.91, 0.99, 1.12, 1.25, 1.3,  1.45, 1.41, 1.2,  null, null, null, null, null, null, null, null, null, null, null, ]},
-      {visible: false, name:'Puerto Rico',  color:'#404040', data:[   null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
-      {visible: false, name:'Portugal',  color:'#404040', data:[    null, null, null, null, null, 0.9,  null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
-      {visible: false, name:'Paraguay',  color:'#404040', data:[    null, null, null, null, null, null, null, null, null, null, null, 1.1,  1.17, 0.9,  0.85, 0.63, null, null, 0.41, null, null, 0.37, 0.35, null, 0.31, ]},
-      {visible: false, name:'El Salvador',  color:'#404040', data:[   null, null, null, null, 0.3,  0.3,  0.31, 0.31, 0.83, null, null, null, null, null, null, null, null, 0.79, 0.87, 0.94, 0.99, 0.98, 1.09, 1.15, 1.12, ]},
-      {visible: false, name:'Trinidad y Tobago',  color:'#404040', data:[   null, null, null, null, null, null, 0.28, 0.3,  0.33, 0.34, 0.3,  0.26, 0.27, 0.23, 0.21, 0.19, 0.12, 0.1,  0.08, 0.15, 0.12, 0.11, 0.12, 0.13, 0.2,  ]},
-      {visible: false, name:'Estados Unidos',  color:'#404040', data:[    null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
-      {visible: false, name:'Uruguay',  color:'#404040', data:[   null, null, null, null, null, null, null, null, null, null, null, null, 0.25, null, null, null, null, 0.65, 0.62, 0.72, 0.69, 0.6,  0.55, 0.51, 0.54, ]},
-      {visible: false, name:'Venezuela',  color:'#404040', data:[   0.37, 0.39, 0.49, 0.47, 0.58, null, null, 0.43, 0.39, 0.39, 0.38, 0.5,  0.43, 0.31, 0.25, 0.35, 1.78, 2.69, 2.54, 2.36, null, null, null, null, null, ]},
-      {name:'América Latina y el Caribe',  color:'#ff0000', data:[    0.69, 0.65, 0.63, 0.66, 0.7,  0.77, 0.78, 0.85, 0.84, 0.76, 0.74, 0.72, 0.68, 0.84, 0.8,  0.83, 0.88, 0.99, 1.06, 1.13, 1.13, 1.07, 1.08, 1.06, 1.05, ]},
-      {visible: false, name:'Iberoamérica',  color:'#404040', data:[    null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, null, ]},
+{visible: false, name:'Argentina',  color:'#404040', data:[    0.52, 0.54, 0.54, 0.62, 0.61, 0.61, 0.67, 0.66, 0.64]},
+{visible: false, name:'Brasil',  color:'#404040', data:[   1.26, 1.37, 1.46, 1.54, 1.60, 1.55, 1.62, 1.61, null]},
+{visible: false, name:'Colombia',  color:'#404040', data:[   0.40, 0.45, 0.48, 0.45, 0.46, 0.47, 0.53, 0.61, 0.63]},
+{visible: true, name:'Costa Rica',  color:'#ff0000', data:[   1.33, 1.32, 1.39, 1.96, 1.88, 1.81, 1.98, 2.01, 2.58]},
+{visible: false, name:'Cuba',  color:'#404040', data:[   0.68, 0.72, 0.82, 1.02, 1.01, 0.45, 0.58, 0.79, 0.70]},
+{visible: false, name:'México',  color:'#404040', data:[   0.65, 0.64, 0.69, 0.76, 0.74, 0.73, 0.73, 0.75, 0.87]},
+{visible: false, name:'Panamá',  color:'#404040', data:[   0.75, 0.47, 0.46, 0.39, 0.41, 0.50, 0.30, 0.34, null]},
+{visible: false, name:'El Salvador',  color:'#404040', data:[    null, 0.78, 0.87, 0.93, 0.98, 0.97, 1.08, 1.14, 1.11]},
+{visible: false, name:'Trinidad y Tobago',  color:'#404040', data:[    0.11, 0.10, 0.07, 0.15, 0.11, 0.11, 0.11, 0.13, 0.19]},
+{visible: false, name:'Uruguay',  color:'#404040', data:[    null, 0.65, 0.62, 0.72, 0.69, 0.59, 0.55, 0.51, 0.54]},
+{visible: true, name:'América Latina y el Caribe',  color:'#0000ff', data:[   0.88, 0.98, 1.05, 1.13, 1.12, 1.07, 1.07, 1.05, 1.04]}
       ]
     });
 }

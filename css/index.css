@@ -4,7 +4,7 @@ html {
 
 }
 body {
-  background: #acacac; 
+  background: #efefef; 
  /*  background: -webkit-linear-gradient(#cecece, #a3a4d2); 
     background: -o-linear-gradient(#cecece, #a3a4d2); 
     background: -moz-linear-gradient(#cecece, #a3a4d2); 
@@ -30,15 +30,20 @@ body {
  }
 
  .cont-text{
-  min-height: 650px;
-   float: left;
-   width: 39%;
+  min-height: 550px;
+
  }
+
+@media (max-width: 990px){
+  .cont-text{
+   min-height: 200px;
+ }
+}
  .cont-chart{
    height: 600px;
-   float: left;
+  /* float: left;
    width: 59%;
-   margin-left: 10px;
+   margin-left: 10px;*/
  }
  .title1{
    margin: 10px 20px;
@@ -58,27 +63,27 @@ body {
 .tab{
  float: left;
  margin: 0px 2px;
- background: #d2e0ec;
+ background: #032844;
  padding: 15px;
  border-radius: 5px 5px 0px 0px;
  list-style:none;
  box-shadow: 2px 2px 1px #888888;
- color: #ccc;
+ color: #fff;
  font-weight: 600;
 }
 .tab:hover{
-  background: #26a37a;
+  background: #008942;
   color: #fff;
 }
 
 .tab:hover  >.btn-tab{
-  background: #26a37a;
+  background: #008942;
   color: #fff;
 }
 
 .btn-tab{
   text-decoration: none;
-  color: #000000;
+  color: #fff;
 }
 
 .list-tab{
@@ -101,7 +106,7 @@ ul{
 
 .highcharts-box{
   width: 100%;
-  height: 550px;
+  height: 500px;
 
 }
 p{

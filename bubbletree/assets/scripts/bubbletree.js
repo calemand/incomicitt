@@ -2757,6 +2757,7 @@ BubbleTree.Bubbles.Icon = function(node, bubblechart, origin, radius, angle, col
 		//if (me.node.children.length > 1) {
 			me.bc.navigateTo(me.node);
 		//}
+		console.log(me);
 	};
 
 	me.onhover = function(e) {

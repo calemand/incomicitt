@@ -12,7 +12,7 @@ h1{
   src: url('FjallaOne-Regular.ttf')  format('truetype');
 }
 body {
-    font-family: 'AverageRegular', 'sans-serif' !important;
+/*    font-family: 'AverageRegular', 'sans-serif' !important;*/
 }
 .container {
 	/*height: 100%;*/
