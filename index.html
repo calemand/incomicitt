@@ -55,19 +55,9 @@
 
 				</section>
 				<!-- Inversión económica -->
-				<section >
-					
+				<section>
 					<div class="row">
-						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-5" ng-show="isSet(1)">
-							<div class="cont-text">
-								<div class="header-box">
-									<P class="title1">Costa Rica vs Latinoamérica</P>
-								</div>
-								<img src="img/img_23.png" class="min-img">
-								<p class="text1">A lo largo del tiempo, el gobierno de Costa Rica ha invertido desde los años 90 entre 0.72% y el 2% de su presupuesto en ciencia y tecnología. Para ponerlo en perspectiva, Costa Rica se sitúa entre los países mejor posicionados del área en este sentido. </p>
-							</div>
-						</div>
-						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-5" ng-show="isSet(2)">
+								<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
 							<div class="cont-text"> 
 								<div class="header-box">
 									<P class="title1">Inversión económica</P>
@@ -76,35 +66,44 @@
 								<p class="text1">El aumento al presupuesto de ciencia y tecnología viene en paralelo con cada uno de sus componentes. Se le da más prioridad a la educación, luego a los servicios y por último a la investigación y desarrollo.  Esto responde a la intención de formar profesionales en áreas técnicas y suplir la creciente demanda etc*** SE PUEDE PONER UNA REFERENCIA A LA FORMACION DE PROFESIONALES EN AREAS TECNICAS***</p>
 							</div>
 						</div>
-						<div class="col-xs-12 col-sm-12 col-md-6 col-lg-7 ">
+						<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 ">
 							<div class="cont-chart">
-								<div class="list-tab" >
-									<ul >
-										<li class="tab" class="tab" ng-class="{ active: isSet(1) }">
-											<span class="btn-tab" ng-click="setTab(1)">(ACT) + (I+D)</span>
-										</li>
-										<li class="tab" class="tab" ng-class="{ active: isSet(2) }">
-											<span class="btn-tab" ng-click="setTab(2)">Gastos de ACT</span>
-										</li>
-										<li  class="tab" ng-class="{ active: isSet(1) }">
-											<span class="btn-tab" href ng-click="setTab(1)">Costa Rica vs Latinoamérica </span>
-										</li>
-									</ul>
+										<div class="highcharts-box" id="container-ACT1"></div>
+								
 								</div>
-								<div >
-									<div  ng-show="isSet(1)">
+							</div>
+						</div>
+				
+
+				</section>
+				<section >
+					
+					<div class="row">
+						<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+							<div class="cont-text">
+								<div class="header-box">
+									<P class="title1">Costa Rica vs Latinoamérica</P>
+								</div>
+								<img src="img/img_23.png" class="min-img">
+								<p class="text1">A lo largo del tiempo, el gobierno de Costa Rica ha invertido desde los años 90 entre 0.72% y el 2% de su presupuesto en ciencia y tecnología. Para ponerlo en perspectiva, Costa Rica se sitúa entre los países mejor posicionados del área en este sentido. </p>
+							</div>
+						</div>
+	
+						<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7 ">
+							<div class="cont-chart">
+					
+								
+									<!--
 										<div id="chart"></div>
 										<span id="min-time">2009</span> 
 										<input type="range" name="points" min="0" max="5" step="1" value="0" id="slider-time" style=" width:475px">
 										<span id="max-time">2014</span>
-									</div>
-									<div  ng-show="isSet(2)">
-										<div class="highcharts-box" id="container-ACT1"></div>
-									</div>
-									<div ng-show="isSet(3)">
+									-->
+						
+									<div >
 										<div class="highcharts-box" id="containerACTPaises"></div>
 									</div>
-								</div>
+								
 							</div>
 						</div>
 					</div>
