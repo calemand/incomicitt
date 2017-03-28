@@ -1,4 +1,13 @@
 /* Jquery */
+
+ $( function() {
+    $( "#tabs" ).tabs();
+  } );
+
+ $( function() {
+    $( "#myTab" ).tabs();
+  } );
+
 var app = angular.module("app", []);
 
 app.controller("MainCtrl", function($scope) {
@@ -21,154 +30,231 @@ app.controller("MainCtrl", function($scope) {
     return $scope.tab2 === tabNum;
   };
   
-  chartACT();
-  chartACTPais() 
-  function chartACT() {
-    Highcharts.chart('container-ACT1', {
+chartACTInn();
+chartACTInn2();
+impInn();
+
+
+  function chartACTInn() {
+    Highcharts.chart('actInn', {
       chart: {
         type: 'column'
       },
       title: {
-        text: 'Gastos del ACT'
+        text: 'Actividades de innovación'
       },
       subtitle: {
-        text: 'División de Gastos del ACT',
+        text: '',
       },
       xAxis: {
-        categories: ['2011',  '2012',  '2013',  '2014']
+        categories: ['A cualquier tipo de innovación', 'Producto',  'Proceso', 'Organización',  'Comercialización']
       },
       yAxis: {
         title: {
           text: 'Cifras en millones de dolares'
         },
+
         plotLines: [{
           value: 0,
           width: 1,
           color: '#808080'
         }]
       },
+              plotOptions: {
+          column: {
+            stacking: 'normal',
+            dataLabels: {
+              enabled: true,
+              color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+            }
+          }
+        },
       tooltip: { 
-        valueSuffix: "$", 
-        valuePrefix: "",
         borderRadius: 10,
         borderWidth: 3,
         shared: true,
         useHTML: true,
         formatter: function () {
-          var s = "<center><strong>Año "+this.x+"</center></strong><table>";
+          var s = "<center><strong>"+this.x+"</center></strong><table>";
           var total = 0;
           var cont = 0;
           $.each(this.points, function () {
             cont++;
             if(this.y!=0){
-              s += "<tr><td style='color:"+this.series.color+"'>"+this.series.name+": </td>" + "<td style='text-align: right'><b> $"+Highcharts.numberFormat(this.y, 2,',','.')+"</b></td></tr>";
+              s += "<tr><td style='color:"+this.series.color+"'>"+this.series.name+": </td>" + "<td style='text-align: right'><b>"+Highcharts.numberFormat(this.y, 2,',','.')+"</b></td></tr>";
               total += this.y;
             }
           });if(cont>1){
-            s += "<tr><td style='color:#000'>Total de gastos en ACT: </td>" + "<td style='text-align: right'><b> $"+Highcharts.numberFormat(total,2,',','.')+"</b></td></tr>";
+            s += "<tr><td style='color:#000'>Total: </td>" + "<td style='text-align: right'><b> "+Highcharts.numberFormat(total,2,',','.')+"</b></td></tr>";
           }
           var total = 0;
           return s+='</table>';
         },
         valueDecimals: 2
       },
-      plotOptions: {
-        spline: {
-          marker: {
-            radius: 4,
-            lineColor: '#666666',
-            lineWidth: 1
-          }
-        }
-      },
       series: [
-      {
-        name: 'Gastos en EFCT',
-        data: [343,425.8,427.75,645.27]
-      },{
-        name: 'Gastos en SCT',
-        data: [192.7,205.5,282.85,359.41]
-      },  {
-        name: 'Gastos en I+D',
-        data: [149.5,177.1,189.27,183.85]
-      }, {
-        name: 'Gastos no desagregados por actividad',
-        data: [7.2, 1.8, 1.96, 0.36]
-      }]
+      {name:'I+D externa',  data:[  17.3, 58.1, 43.9, 20.3, 25.9]},
+      {name:'Consultorías (para cambios novedosos)',  data:[  22.7, 13.3, 7,  2.3,  6.3]},
+      {name:'Ingeniería y Diseño Industrial (in house)',  data:[  27.7, 29.5, 44.6, 7.9,  9.2]},
+      {name:'Contratación de Tecnología (existente)',  data:[ 29.1, 13.1, 24.3, 28.8, 17.6]},
+      {name:'Gestión (in house)',  data:[ 38.3, 12.8, 24.3, 26.8, 16.7]},
+      {name:'Software',  data:[ 44.1, 17.3, 18.2, 9.9,  6.8]},
+      {name:'Hardware',  data:[ 48.9, 16.7, 21.6, 6.1,  4.5]},
+      {name:'Bienes de Capital (maquinaria y equipo)',  data:[  57.4, 22.7, 27.3, 18.2, 11.5]},
+      {name:'Capacitación',  data:[ 66.6, 32.9, 46.6, 35.4, 22.7]},
+      {name:'I+D interna',  data:[  70, 9,  12.4, 13.5, 7.2]}
+
+      ]
     });
   }
 
 
-
-  function chartACTPais() {
-    Highcharts.chart('containerACTPaises', {
+function chartACTInn2() {
+    Highcharts.chart('actInn2', {
       chart: {
-        type: 'line',
-        zoomType: 'x'
+        type: 'column'
       },
       title: {
-        text: 'Costa Riva vs Latinoamérica'
+        text: 'Actividades de innovación'
       },
       subtitle: {
-        text: 'PIB vs ACT Paises',
+        text: '',
       },
       xAxis: {
-        categories: [  '2006',  '2007',  '2008',  '2009',  '2010',  '2011',  '2012',  '2013',  '2014']
+        categories: ['I+D externa', 'Consultorías (para cambios novedosos)',  'Ingeniería y Diseño Industrial (in house)',  'Contratación de Tecnología (existente)', 'Gestión (in house)', 'Software', 'Hardware', 'Bienes de Capital (maquinaria y equipo)',  'Capacitación', 'I+D interna'
+]
       },
       yAxis: {
         title: {
-          text: 'Porcentaje del PIB'
+          text: 'Cifras en millones de dolares'
         },
+
         plotLines: [{
           value: 0,
           width: 1,
           color: '#808080'
         }]
       },
-  /*      tooltip: { 
+              plotOptions: {
+          column: {
+            stacking: 'normal',
+            dataLabels: {
+              enabled: true,
+              color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+            }
+          }
+        },
+      tooltip: { 
         borderRadius: 10,
         borderWidth: 3,
         shared: true,
         useHTML: true,
-      formatter: function () {
-          var s = "<center><strong>Año "+this.x+"</center></strong><table>";
-
+        formatter: function () {
+          var s = "<center><strong>"+this.x+"</center></strong><table>";
+          var total = 0;
+          var cont = 0;
           $.each(this.points, function () {
-
+            cont++;
             if(this.y!=0){
-              s += "<tr><td style='color:"+this.series.color+"'>"+this.series.name+": </td>" + "<td style='text-align: right'><b>"+Highcharts.numberFormat(this.y, 2,',','.')+"%</b></td></tr>";
-              
+              s += "<tr><td style='color:"+this.series.color+"'>"+this.series.name+": </td>" + "<td style='text-align: right'><b>"+Highcharts.numberFormat(this.y, 2,',','.')+"</b></td></tr>";
+              total += this.y;
             }
-          });
+          });if(cont>1){
+            s += "<tr><td style='color:#000'>Total: </td>" + "<td style='text-align: right'><b> "+Highcharts.numberFormat(total,2,',','.')+"</b></td></tr>";
+          }
+          var total = 0;
           return s+='</table>';
         },
         valueDecimals: 2
-      },*/
-      plotOptions: {
-        spline: {
-          marker: {
-            radius: 4,
-            lineColor: '#666666',
-            lineWidth: 1
-          }
-        }
       },
-      series: 
-      [
-{visible: false, name:'Argentina',  color:'#404040', data:[    0.52, 0.54, 0.54, 0.62, 0.61, 0.61, 0.67, 0.66, 0.64]},
-{visible: false, name:'Brasil',  color:'#404040', data:[   1.26, 1.37, 1.46, 1.54, 1.60, 1.55, 1.62, 1.61, null]},
-{visible: false, name:'Colombia',  color:'#404040', data:[   0.40, 0.45, 0.48, 0.45, 0.46, 0.47, 0.53, 0.61, 0.63]},
-{visible: true, name:'Costa Rica',  color:'#ff0000', data:[   1.33, 1.32, 1.39, 1.96, 1.88, 1.81, 1.98, 2.01, 2.58]},
-{visible: false, name:'Cuba',  color:'#404040', data:[   0.68, 0.72, 0.82, 1.02, 1.01, 0.45, 0.58, 0.79, 0.70]},
-{visible: false, name:'México',  color:'#404040', data:[   0.65, 0.64, 0.69, 0.76, 0.74, 0.73, 0.73, 0.75, 0.87]},
-{visible: false, name:'Panamá',  color:'#404040', data:[   0.75, 0.47, 0.46, 0.39, 0.41, 0.50, 0.30, 0.34, null]},
-{visible: false, name:'El Salvador',  color:'#404040', data:[    null, 0.78, 0.87, 0.93, 0.98, 0.97, 1.08, 1.14, 1.11]},
-{visible: false, name:'Trinidad y Tobago',  color:'#404040', data:[    0.11, 0.10, 0.07, 0.15, 0.11, 0.11, 0.11, 0.13, 0.19]},
-{visible: false, name:'Uruguay',  color:'#404040', data:[    null, 0.65, 0.62, 0.72, 0.69, 0.59, 0.55, 0.51, 0.54]},
-{visible: true, name:'América Latina y el Caribe',  color:'#0000ff', data:[   0.88, 0.98, 1.05, 1.13, 1.12, 1.07, 1.07, 1.05, 1.04]}
+      series: [
+
+{name:'A cualquier tipo de innovación',  data:[ 17.3, 22.7, 27.7, 29.1, 38.3, 44.1, 48.9, 57.4, 66.6, 70]},
+{name:'Producto',  data:[ 58.1, 13.3, 29.5, 13.1, 12.8, 17.3, 16.7, 22.7, 32.9, 9]},
+{name:'Proceso',  data:[  43.9, 7,  44.6, 24.3, 24.3, 18.2, 21.6, 27.3, 46.6, 12.4]},
+{name:'Organización',  data:[ 20.3, 2.3,  7.9,  28.8, 26.8, 9.9,  6.1,  18.2, 35.4, 13.5]},
+{name:'Comercialización',  data:[ 25.9, 6.3,  9.2,  17.6, 16.7, 6.8,  4.5,  11.5, 22.7, 7.2]}
+
+
       ]
     });
-}
+  }
+
+  
+
+
+
+
+  function impInn() {
+    Highcharts.chart('impInn', {
+      chart: {
+        type: 'column'
+      },
+      title: {
+        text: 'Impacto de innovación'
+      },
+      subtitle: {
+        text: '',
+      },
+      xAxis: {
+        categories: [ 'Mejoró la calidad de los productos', 'Amplió la gama de productos ofrecidos',  'Aumentó la capacidad productiva',  'Aumentó la flexibilidad de la producción', 'Redujo el consumo de materias primas e insumos', 'Redujo el consumo de energía', 'Redujo los costos de la mano de obra', 'Mejoró el aprovechamiento de las competencias del personal', 'Amplió la participación y creatividad de la fuerza laboral', 'Se mejoró la gestión de los procesos de innovación', 'Permitió mantener la participación de la empresa en el mercado', 'Amplió la participación de la empresa en el mercado',  'Permitió abrir nuevos mercados', 'Mejoró el impacto sobre aspectos relacionados con el ambiente, salud y/o seguridad', 'Alcanzó regulaciones o estándares nacionales', 'Alcanzó regulaciones o estándares internacionales',
+ ]
+      },
+      yAxis: {
+        title: {
+          text: 'Cifras en millones de dolares'
+        },
+
+        plotLines: [{
+          value: 0,
+          width: 1,
+          color: '#808080'
+        }]
+      },
+              plotOptions: {
+          column: {
+            stacking: 'percent',
+            dataLabels: {
+              enabled: true,
+              color: (Highcharts.theme && Highcharts.theme.dataLabelsColor) || 'white'
+            }
+          }
+        },
+      tooltip: { 
+        borderRadius: 10,
+        borderWidth: 3,
+        shared: true,
+        useHTML: true,
+        formatter: function () {
+          var s = "<center><strong>"+this.x+"</center></strong><table>";
+          var total = 0;
+          var cont = 0;
+          $.each(this.points, function () {
+            cont++;
+            if(this.y!=0){
+              s += "<tr><td style='color:"+this.series.color+"'>"+this.series.name+": </td>" + "<td style='text-align: right'><b>"+Highcharts.numberFormat(this.y, 2,',','.')+"</b></td></tr>";
+              total += this.y;
+            }
+          });if(cont>1){
+            s += "<tr><td style='color:#000'>Total: </td>" + "<td style='text-align: right'><b> "+Highcharts.numberFormat(total,2,',','.')+"</b></td></tr>";
+          }
+          var total = 0;
+          return s+='</table>';
+        },
+        valueDecimals: 2
+      },
+      series: [
+
+{name:'Alta',  data:[ 65.6, 49.8, 50, 37, 22.4, 24.5, 22.6, 41, 38, 36.8, 68.6, 54.5, 41.7, 33.8, 24.9, 16.6]},
+{name:'Media',  data:[  20.4, 26.4, 25.2, 32.2, 21.9, 23.1, 26.9, 34.9, 34.4, 38, 20.3, 29.6, 24.6, 28.5, 16.7, 9.8]},
+{name:'Baja',  data:[ 6.3,  10.6, 13.2, 17.1, 24.8, 22.6, 24, 12, 15.9, 16.3, 7.2,  9.4,  19.8, 17.9, 12.8, 13.2]},
+{name:'Irrelevante',  data:[  7.7,  13.2, 11.5, 13.7, 30.8, 29.8, 26.4, 12, 11.8, 8.9,  3.9,  6.7,  14, 19.8, 45.7, 60.4]},
+
+
+
+      ]
+    });
+  }
 });
 
 

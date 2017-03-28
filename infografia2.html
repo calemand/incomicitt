@@ -5,13 +5,19 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<meta charset="utf-8">
 	<title>Micitt</title>
-	
+	<link rel="stylesheet" type="text/css" href="./css/index.css">
 	<link href="./css/dragit.css" rel="stylesheet"/>
 	<script src="./js/d3.v3.js"></script>
 	<script src="./js/dragit.js"></script> 
 
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/jquery/jquery-3.2.0.min.js"></script>
 	<script type="text/javascript" src="./js/jquery/jquery-ui.js"></script>
+
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+	<script type="text/javascript" src="./js/angular/app_infografia_2.js"></script>
+
+	<script type="text/javascript" src="./js/highcharts/highcharts.js"></script>
+
 
 
 	<!-- Latest compiled and minified CSS -->
@@ -24,18 +30,18 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
 
 
-	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-	<script type="text/javascript" src="./js/angular/app_infografia_2.js"></script>
-	<script type="text/javascript" src="./js/highcharts/highcharts.js"></script>
-	<script type="text/javascript" src="./js/lineChart.js"></script>
+
 </head>
 <body ng-controller="MainCtrl as ctrl" >
 	
 	<header>
-		<iframe style="width:100%;  overflow:hidden" id="myIframe" src="http://www.micit.go.cr/junar/header.html" frameborder="0" frameborder="0" scrolling="no"></iframe>
+			<iframe style="width:100%;  overflow:hidden" id="myIframe" src="http://www.micit.go.cr/junar/header.html" frameborder="0" frameborder="0" scrolling="no"></iframe> 
 	</header>
 	
 	<div class="container-fluid"> 
+
+
+
 		<!--Pit -->
 		<section>
 			<div class="row">
@@ -48,7 +54,6 @@
 						<p class="text1">Investigación y desarrollo (mejor conocido como I+D) comprende el trabajo creativo llevado a cabo de forma sistemática para incrementar el volumen de conocimientos, incluido el conocimiento de la humanidad la cultura y la sociedad, y el uso de esos conocimientos para crear nuevas aplicaciones.
 							Este tipo de investigación, en cuanto al aprovechamiento de sus resultados, es el conductor del desarrollo socio-económico del cualquier país. ¿Pero por qué?
 						</p>
-
 					</div>
 				</div>
 			</div>
@@ -70,22 +75,61 @@
 					</div>
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
-					<div class="cont-chart">
+	
+<!--				<div class="cont-chart">
 						<div class="list-tab" >
 							<ul >
-								<li class="tab" >
-									<a class="btn-tab" href ng-click="setTab(1)">Gastos de ACT 1</a>
+								<li class="tab active"  ng-class="{ active: isSet(1) }">
+									<a class="btn-tab"  ng-click="setTab(1)">Tipos Investigación</a>
+								</li>
+								<li class="tab"  ng-class="{ active: isSet(2) }">
+									<a class="btn-tab"  ng-click="setTab(2)">Proyectos Area Científica</a>
 								</li>
 							</ul>
 						</div>
 						<div >
-							<div >
-								<style type="text/css"> #ifrBubble{top:0px; left:0px; bottom:0px; right:0px; width:95%; height: 600px; border:none; margin:0; padding:0; overflow:hidden; z-index:999999; }</style><iframe name="ifrBubble" id="ifrBubble" src="./bubbletree.html" frameborder="0"></iframe>
+						<div ng-show="isSet(1)">
+								<div class="highcharts-box" id="containerTipos"></div>
 							</div>
-
+							<div ng-show="isSet(2)">
+								<div class="highcharts-box" id="containerProyectos"></div>
+							</div>
 						</div>
 					</div>
+
+					<ul class="nav nav-tabs" role="tablist">
+						<li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Tipos Investigación</a></li>
+						<li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Proyectos Area Científica</a></li>
+					</ul>
+
+				
+					<div class="tab-content">
+						<div role="tabpanel" class="tab-pane active" id="home">
+						<div class="highcharts-box" id="containerTipos"></div>
+						</div>
+						<div role="tabpanel" class="tab-pane" id="profile">
+						<div class="highcharts-box" id="containerProyectos"></div>
+						</div>
+		
+					</div>
+
+				-->
+				<div class="cont-chart">
+					<div class="list-tab"  id="tabs">
+						<ul>
+							<li class="tab"><a  class="btn-tab"  href="#tabs-1">Tipos Investigación</a></li>
+							<li class="tab"><a  class="btn-tab"  href="#tabs-2">Proyectos Area Científica</a></li>
+						</ul>
+						<div id="tabs-1">
+						<div class="highcharts-box" id="containerTipos"></div>
+						</div>
+						<div id="tabs-2">
+						<div class="highcharts-box" id="containerProyectos"></div>
+						</div>
+					
+					</div>
 				</div>
+			</div>
 			</div>
 		</section>
 		<!-- Inversión económica -->
@@ -116,33 +160,7 @@
 				</div>
 				<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7"> 
 					<div class="cont-chart">
-						<div class="list-tab" >
-							<ul >
-								<li class="tab" class="tab" ng-class="{ active: isSet(1) }">
-									<a class="btn-tab" ng-click="setTab(1)">(ACT) + (I+D)</a>
-								</li>
-								<li class="tab" class="tab" ng-class="{ active: isSet(2) }">
-									<a class="btn-tab" ng-click="setTab(2)">Gastos de ACT 2</a>
-								</li>
-								<li  class="tab" ng-class="{ active: isSet(3) }">
-									<a class="btn-tab" href ng-click="setTab(3)">Costa Rica vs Latinoamérica </a>
-								</li>
-							</ul>
-						</div>
-						<div >
-							<div  ng-show="isSet(1)">
-								<div id="chart"></div>
-								<span id="min-time">2009</span> 
-								<input type="range" name="points" min="0" max="5" step="1" value="0" id="slider-time" style=" width:475px">
-								<span id="max-time">2014</span>
-							</div>
-							<div  ng-show="isSet(2)">
-								<div class="highcharts-box" id="container-ACT1"></div>
-							</div>
-							<div ng-show="isSet(3)">
-								<div class="highcharts-box" id="containerACTPaises"></div>
-							</div>
-						</div>
+						<div class="highcharts-box" id="container_ID_ACT"></div>
 					</div>
 				</div>
 			</div>
@@ -152,7 +170,6 @@
 			<div class="row">
 				<div class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
 					<div class="text-head"> 
-
 						<div class="header-box">
 							<P class="title1">¿Cómo se puede relacionar el aumento en I+D con mejores oportunidades para el país, menor desempleo y calidad de vida para las personas?</P>
 						</div>
@@ -164,7 +181,7 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
+				<div class="col-xs-12 col-sm-12 col-md-3 col-lg-3">
 					<div class="cont-text">
 						<div class="header-box">
 							<P class="title1">Lorem Ipsum</P>
@@ -176,11 +193,12 @@
 						
 					</div>
 				</div>
-				<div class="col-xs-12 col-sm-12 col-md-7 col-lg-7"> 
+				<div class="col-xs-12 col-sm-12 col-md-9 col-lg-9"> 
 					<div class="cont-chart">
-
+<!--
 						<div class='tableauPlaceholder' id='viz1489600544780' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;nd&#47;ndiceGlobaldeInnovacin&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='ndiceGlobaldeInnovacin&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;nd&#47;ndiceGlobaldeInnovacin&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1489600544780');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1124px';vizElement.style.minHeight='629px';vizElement.style.maxHeight='929px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-
+-->
+<iframe style="width:100%; height: 600px; overflow:hidden"  src="http://public.tableau.com/views/ndiceGlobaldeInnovacin/Dashboard1?:embed=y&:showVizHome=no&:host_url=https%3A%2F%2Fpublic.tableau.com%2F&:tabs=no&:toolbar=yes&:animate_transition=yes&:display_static_image=no&:display_spinner=no&:display_overlay=yes&:display_count=yes&:loadOrderID=0%22"></iframe>
 					</div>
 
 				</div>
@@ -188,10 +206,10 @@
 		</section>
 	</div>
 
-	<iframe style="width:100%; height: 200px; overflow:hidden" id="myIframe" src="http://www.micit.go.cr/junar/footer.html" frameborder="0" frameborder="0" scrolling="no"></iframe>
+		<iframe style="width:100%; height: 200px; overflow:hidden" id="myIframe" src="http://www.micit.go.cr/junar/footer.html" frameborder="0" frameborder="0" scrolling="no"></iframe> 
 	
 
-	<script type="text/javascript" src="./js/chart.js"></script>
+	<!-- script type="text/javascript" src="./js/chart.js"></script -->
 	<link rel="stylesheet" type="text/css" href="./css/index.css">
 </body>
 </html>
