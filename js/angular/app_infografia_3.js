@@ -42,11 +42,11 @@ app.controller("MainCtrl", function($scope) {
     return $scope.tab2 === tabNum;
   };
   
-chartACTInn();
-chartACTInn2();
+/*chartACTInn();
+chartACTInn2();*/
 impInn();
 impInnID();
-noInn() ;
+/*noInn() ;*/
 factNoInn();
 factNoInnNo();
   function chartACTInn() {
@@ -276,7 +276,7 @@ function chartACTInn2() {
         type: 'line'
       },
       title: {
-        text: '% Presupuesto I+D por año'
+        text: 'Porcentaje de ventas dedicado a I+D'
       },
       subtitle: {
         text: '',
@@ -393,10 +393,10 @@ function chartACTInn2() {
         type: 'bar'
       },
       title: {
-        text: 'Factores no innovar Innovadora'
+        text: 'Empresas que innovaron'
       },
       subtitle: {
-        text: '',
+        text: 'Obstáculos para innovar',
       },
       xAxis: {
         categories: [ 'Carencia de infraestructura física', 'Escaso desarrollo de instituciones relacionadas con ciencia y tecnología', 'Reducido tamaño del mercado',  'Políticas públicas inadecuadas para la promoción de C&T',  'Períodos de retorno inconvenientes' ]
@@ -447,10 +447,10 @@ function chartACTInn2() {
         type: 'bar'
       },
       title: {
-        text: 'Factores no innovar Innovadora'
+        text: 'Empresas que no innovaron'
       },
       subtitle: {
-        text: '',
+        text: 'Obstáculos para innovar',
       },
       xAxis: {
         categories: ['Falta de recursos financieros propios', 'Facilidad de imitación por terceros',  'Escasez de personal capacitado', 'No consideraron necesario hacer ninguna innovación', 'Reducido tamaño del mercado' ]
