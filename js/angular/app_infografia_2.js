@@ -228,17 +228,17 @@ app.controller("MainCtrl", function($scope) {
       },
       series: 
       [
-      { name:'Argentina',  color:'#404040', data:[ 86, 84, 86, 93, 92, 92, 94, 94, 92]},
-      { name:'Brasil',  color:'#404040', data:[  78, 79, 77, 73, 72, 73, 71, 74, null,]},
-      { name:'Colombia' , color:'#404040', data:[  37, 39, 39, 42, 40, 42, 41, 44, 39]},
+      { name:'Argentina',   data:[ 86, 84, 86, 93, 92, 92, 94, 94, 92]},
+      { name:'Brasil',   data:[  78, 79, 77, 73, 72, 73, 71, 74, null,]},
+      { name:'Colombia' ,  data:[  37, 39, 39, 42, 40, 42, 41, 44, 39]},
       { name:'Costa Rica' , color:'#ff0000', data:[  32, 27, 29, 28, 26, 27, 29, 28, 22]},
-      { name:'Cuba',  color:'#404040', data:[  60, 60, 60, 60, 60, 60, 70, 60, 60]},
-      { name:'México',  color:'#404040', data:[  57, 67, 68, 68, 72, 70, 67, 67, 62]},
-      { name:'Panamá' , color:'#404040', data:[  37, 39, 41, 35, 36, 38, 30, 21, null,]},
-      { name:'El Salvador',  color:'#404040', data:[ null,,  11, 12, 8,  7,  3,  3,  5,  8]},
-      { name:'Trinidad y Tobago',  color:'#404040', data:[ 47, 45, 39, 36, 40, 36, 38, 41, 42]},
-      { name:'Uruguay',  color:'#404040', data:[ null,,  65, 61, 59, 51, 59, 61, 62, 62]},
-      { name:'América Latina y el Caribe',  color:'#404040', data:[  61, 61, 61, 61, 64, 67, 65, 68, 67]}
+      { name:'Cuba',   data:[  60, 60, 60, 60, 60, 60, 70, 60, 60]},
+      { name:'México',   data:[  57, 67, 68, 68, 72, 70, 67, 67, 62]},
+      { name:'Panamá' ,  data:[  37, 39, 41, 35, 36, 38, 30, 21, null,]},
+      { name:'El Salvador',   data:[ null,,  11, 12, 8,  7,  3,  3,  5,  8]},
+      { name:'Trinidad y Tobago',   data:[ 47, 45, 39, 36, 40, 36, 38, 41, 42]},
+      { name:'Uruguay',   data:[ null,,  65, 61, 59, 51, 59, 61, 62, 62]},
+      { name:'América Latina y el Caribe',   data:[  61, 61, 61, 61, 64, 67, 65, 68, 67]}
       ]
     });
   }

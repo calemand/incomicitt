@@ -8,6 +8,18 @@
     $( "#myTab" ).tabs();
   } );
 
+ $( function() {
+    $( "#my_Tab" ).tabs();
+  } );
+
+  $( function() {
+    $( "#myTabs" ).tabs();
+  } );
+  $( function() {
+    $( "#tabsFactores" ).tabs();
+  } );
+
+
 var app = angular.module("app", []);
 
 app.controller("MainCtrl", function($scope) {
@@ -33,8 +45,10 @@ app.controller("MainCtrl", function($scope) {
 chartACTInn();
 chartACTInn2();
 impInn();
-
-
+impInnID();
+noInn() ;
+factNoInn();
+factNoInnNo();
   function chartACTInn() {
     Highcharts.chart('actInn', {
       chart: {
@@ -202,7 +216,7 @@ function chartACTInn2() {
       },
       yAxis: {
         title: {
-          text: 'Cifras en millones de dolares'
+          text: ''
         },
 
         plotLines: [{
@@ -248,9 +262,234 @@ function chartACTInn2() {
 {name:'Alta',  data:[ 65.6, 49.8, 50, 37, 22.4, 24.5, 22.6, 41, 38, 36.8, 68.6, 54.5, 41.7, 33.8, 24.9, 16.6]},
 {name:'Media',  data:[  20.4, 26.4, 25.2, 32.2, 21.9, 23.1, 26.9, 34.9, 34.4, 38, 20.3, 29.6, 24.6, 28.5, 16.7, 9.8]},
 {name:'Baja',  data:[ 6.3,  10.6, 13.2, 17.1, 24.8, 22.6, 24, 12, 15.9, 16.3, 7.2,  9.4,  19.8, 17.9, 12.8, 13.2]},
-{name:'Irrelevante',  data:[  7.7,  13.2, 11.5, 13.7, 30.8, 29.8, 26.4, 12, 11.8, 8.9,  3.9,  6.7,  14, 19.8, 45.7, 60.4]},
+//{name:'Irrelevante',  data:[  7.7,  13.2, 11.5, 13.7, 30.8, 29.8, 26.4, 12, 11.8, 8.9,  3.9,  6.7,  14, 19.8, 45.7, 60.4]},
 
 
+
+      ]
+    });
+  }
+
+  function impInnID() {
+    Highcharts.chart('impInnID', {
+      chart: {
+        type: 'line'
+      },
+      title: {
+        text: '% Presupuesto I+D por año'
+      },
+      subtitle: {
+        text: '',
+      },
+      xAxis: {
+        categories: [ '2010' , '2011' , '2012' , '2013' ]
+      },
+      yAxis: {
+        title: {
+          text: ''
+        },
+
+        plotLines: [{
+          value: 0,
+          width: 1,
+          color: '#808080'
+        }]
+      },
+
+      tooltip: { 
+        borderRadius: 10,
+        borderWidth: 3,
+        shared: true,
+        useHTML: true,
+        formatter: function () {
+          var s = "<center><strong>"+this.x+"</center></strong><table>";
+          var total = 0;
+          var cont = 0;
+          $.each(this.points, function () {
+            cont++;
+            if(this.y!=0){
+              s += "<tr><td style='color:"+this.series.color+"'>"+this.series.name+": </td>" + "<td style='text-align: right'><b>"+Highcharts.numberFormat(this.y, 2,',','.')+" %</b></td></tr>";
+              total += this.y;
+            }
+          });/*if(cont>1){
+            s += "<tr><td style='color:#000'>Total: </td>" + "<td style='text-align: right'><b> "+Highcharts.numberFormat(total,2,',','.')+"</b></td></tr>";
+          }*/
+          var total = 0;
+          return s+='</table>';
+        },
+        valueDecimals: 2
+      },
+      series: [
+
+{name:'Pequeñas',  data:[ 0.86, 0.73, 1.3,  1.4]},
+{name:'Medianas',  data:[ 0.43, 0.44, 1.1,  1]},
+{name:'Grandes',  data:[  0.36, 0.3,  0.72, 1.2]}
+
+
+
+
+      ]
+    });
+  }
+  function noInn() {
+    Highcharts.chart('noInn', {
+      chart: {
+        type: 'bar'
+      },
+      title: {
+        text: 'Factores Alto No I+D'
+      },
+      subtitle: {
+        text: '',
+      },
+      xAxis: {
+        categories: [ 'I+D es demasiado caro para la empresa',  'Falta de apoyo del Sector Público',  'Falta de acceso a crédito',  'Las fuentes externas de información son suficientes para la innovación', 'Mercados pequeños que no permiten la recuperación de las inversiones en I+D',  'Las inversiones en I+D son muy riesgosas', 'Dificultades para apropiarse de los resultados de la I+D', 'I+D no es necesario para las actividades de innovación de la empresa', 'La empresa no innova', 'Las universidades substituyen la I+D de la empresa', 'Los centros e institutos de investigación públicos substituyen la I+D de la empresa'
+ ]
+      },
+      yAxis: {
+        title: {
+          text: ''
+        },
+
+        plotLines: [{
+          value: 0,
+          width: 1,
+          color: '#808080'
+        }]
+      },
+
+      tooltip: { 
+        borderRadius: 10,
+        borderWidth: 3,
+        shared: true,
+        useHTML: true,
+        formatter: function () {
+          var s = "<center><strong>"+this.x+"</center></strong><table>";
+          
+          var cont = 0;
+          $.each(this.points, function () {
+            cont++;
+            if(this.y!=0){
+              s += "<tr><td style='color:"+this.series.color+"'>"+this.series.name+": </td>" + "<td style='text-align: right'><b>"+Highcharts.numberFormat(this.y, 2,',','.')+"</b></td></tr>";
+            
+            }
+          });
+
+          return s+='</table>';
+        },
+        valueDecimals: 2
+      },
+      series: [
+
+{name:'Empresas que Invirtieron en I+D',  data:[  55,9, 55.5, 48.8, 45.6, 43.8, 37.4, 32.4, 21.5, 17.4, 13.4, 10.4]},
+{name:'Empresas que No Invirtieron en I+D',  data:[ 56,0, 49.2, 42.1, 34.4, 44.0, 34.4, 38.0, 34.4, 36.8, 12.8, 6.4]}
+      ]
+    });
+  }
+
+   function factNoInn() {
+    Highcharts.chart('factNoInn', {
+      chart: {
+        type: 'bar'
+      },
+      title: {
+        text: 'Factores no innovar Innovadora'
+      },
+      subtitle: {
+        text: '',
+      },
+      xAxis: {
+        categories: [ 'Carencia de infraestructura física', 'Escaso desarrollo de instituciones relacionadas con ciencia y tecnología', 'Reducido tamaño del mercado',  'Políticas públicas inadecuadas para la promoción de C&T',  'Períodos de retorno inconvenientes' ]
+      },
+      yAxis: {
+        title: {
+          text: ''
+        },
+
+        plotLines: [{
+          value: 0,
+          width: 1,
+          color: '#808080'
+        }]
+      },
+
+      tooltip: { 
+        borderRadius: 10,
+        borderWidth: 3,
+        shared: true,
+        useHTML: true,
+        formatter: function () {
+          var s = "<center><strong>"+this.x+"</center></strong><table>";
+          
+          var cont = 0;
+          $.each(this.points, function () {
+            cont++;
+            if(this.y!=0){
+              s += "<tr><td style='color:"+this.series.color+"'>"+this.series.name+": </td>" + "<td style='text-align: right'><b>"+Highcharts.numberFormat(this.y, 2,',','.')+"</b></td></tr>";
+            
+            }
+          });
+
+          return s+='</table>';
+        },
+        valueDecimals: 2
+      },
+      series: [
+{name:'Factor',  data:[ 41, 38.5, 33.3, 33.3, 33.3]}
+
+      ]
+    });
+  }
+
+ function factNoInnNo() {
+    Highcharts.chart('factNoInnNo', {
+      chart: {
+        type: 'bar'
+      },
+      title: {
+        text: 'Factores no innovar Innovadora'
+      },
+      subtitle: {
+        text: '',
+      },
+      xAxis: {
+        categories: ['Falta de recursos financieros propios', 'Facilidad de imitación por terceros',  'Escasez de personal capacitado', 'No consideraron necesario hacer ninguna innovación', 'Reducido tamaño del mercado' ]
+            },
+      yAxis: {
+        title: {
+          text: ''
+        },
+
+        plotLines: [{
+          value: 0,
+          width: 1,
+          color: '#808080'
+        }]
+      },
+
+      tooltip: { 
+        borderRadius: 10,
+        borderWidth: 3,
+        shared: true,
+        useHTML: true,
+        formatter: function () {
+          var s = "<center><strong>"+this.x+"</center></strong><table>";
+          
+          var cont = 0;
+          $.each(this.points, function () {
+            cont++;
+            if(this.y!=0){
+              s += "<tr><td style='color:"+this.series.color+"'>"+this.series.name+": </td>" + "<td style='text-align: right'><b>"+Highcharts.numberFormat(this.y, 2,',','.')+"</b></td></tr>";
+            
+            }
+          });
+
+          return s+='</table>';
+        },
+        valueDecimals: 2
+      },
+      series: [
+{name:'Porcentaje',  data:[ 43.3, 33.4, 30, 30, 26.7]}
 
       ]
     });

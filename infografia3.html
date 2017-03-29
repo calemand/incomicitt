@@ -10,7 +10,7 @@
 	<script src="./js/d3.v3.js"></script>
 	<script src="./js/dragit.js"></script> 
 
-	<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.0/jquery.min.js"></script>
+	<script type="text/javascript" src="./js/jquery/jquery-3.2.0.min.js"></script>
 	<script type="text/javascript" src="./js/jquery/jquery-ui.js"></script>
 
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
@@ -30,7 +30,7 @@
 <body ng-controller="MainCtrl as ctrl" >
 	
 	<header>
-	<!--	<iframe style="width:100%;  overflow:hidden" id="myIframe" src="http://www.micit.go.cr/junar/header.html" frameborder="0" frameborder="0" scrolling="no"></iframe> -->
+		<iframe style="width:100%;  overflow:hidden" id="myIframe" src="http://www.micit.go.cr/junar/header.html" frameborder="0" frameborder="0" scrolling="no"></iframe> 
 		
 	</header>
 	<div class="container-fluid"> 
@@ -77,15 +77,21 @@
 					<div class="cont-chart">
 						<div class="list-tab"  id="tabs">
 							<ul>
-								<li class="tab"><a  class="btn-tab"  href="#tabs-1">Actividades de innovacion según tipo</a></li>
-								<li class="tab"><a  class="btn-tab"  href="#tabs-2">Actividades de innovacion según actividad</a></li>
+							<li class="tab"><a  class="btn-tab"  href="#tabs-1">Actividades de innovacion</a></li>
+								<li class="tab"><a  class="btn-tab"  href="#tabs-2">Innovacion según tipo</a></li>
+								<li class="tab"><a  class="btn-tab"  href="#tabs-3">Innovacion según actividad</a></li>
+								
 							</ul>
 							<div id="tabs-1">
-							<div class="highcharts-box" id="actInn"></div>
+								<div class='tableauPlaceholder' id='viz1490737669984' style='width: 100%;'><noscript><a href='#'><img alt='Actividades de Innovación ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ac&#47;ActividadesdeInnovacin&#47;ActividadesdeInnovacin&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='ActividadesdeInnovacin&#47;ActividadesdeInnovacin' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;Ac&#47;ActividadesdeInnovacin&#47;ActividadesdeInnovacin&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1490737669984');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='100%';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
 							</div>
 							<div id="tabs-2">
+							<div class="highcharts-box" id="actInn"></div>
+							</div>
+							<div id="tabs-3">
 								<div class="highcharts-box" id="actInn2"></div>
 							</div>
+							
 
 						</div>
 					</div>
@@ -112,13 +118,9 @@
 						<div class="list-tab"  id="myTab">
 							<ul>
 								<li class="tab"><a  class="btn-tab"  href="#myTab-1">Impacto Innovacion</a></li>
-								<li class="tab"><a  class="btn-tab"  href="#myTab-2">...</a></li>
 							</ul>
 							<div id="myTab-1">
 							<div class="highcharts-box" id="impInn"></div>
-							</div>
-							<div id="myTab-2">
-								<div class="highcharts-box" id="contentchat"></div>
 							</div>
 						</div>
 					</div>
@@ -148,49 +150,25 @@
 					</div>
 				</div>
 				<div	class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
-					<div class="cont-chart">
-						<div class='tableauPlaceholder' id='viz1489600544780' style='position: relative'><noscript><a href='#'><img alt='Dashboard 1 ' src='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;nd&#47;ndiceGlobaldeInnovacin&#47;Dashboard1&#47;1_rss.png' style='border: none' /></a></noscript><object class='tableauViz'  style='display:none;'><param name='host_url' value='https%3A%2F%2Fpublic.tableau.com%2F' /> <param name='site_root' value='' /><param name='name' value='ndiceGlobaldeInnovacin&#47;Dashboard1' /><param name='tabs' value='no' /><param name='toolbar' value='yes' /><param name='static_image' value='https:&#47;&#47;public.tableau.com&#47;static&#47;images&#47;nd&#47;ndiceGlobaldeInnovacin&#47;Dashboard1&#47;1.png' /> <param name='animate_transition' value='yes' /><param name='display_static_image' value='yes' /><param name='display_spinner' value='yes' /><param name='display_overlay' value='yes' /><param name='display_count' value='yes' /></object></div>                <script type='text/javascript'>                    var divElement = document.getElementById('viz1489600544780');                    var vizElement = divElement.getElementsByTagName('object')[0];                    vizElement.style.width='1124px';vizElement.style.minHeight='629px';vizElement.style.maxHeight='929px';vizElement.style.height=(divElement.offsetWidth*0.75)+'px';                    var scriptElement = document.createElement('script');                    scriptElement.src = 'https://public.tableau.com/javascripts/api/viz_v1.js';                    vizElement.parentNode.insertBefore(scriptElement, vizElement);                </script>
-				<!--<div >
-					<div class="list-tab" >
-						<ul >
-							<li class="tab" ng-class="{ active: isSet2(1) }">
-								<a class="btn-tab" href ng-click="setTab2(1)">Cantidad de proyectos</a>
-							</li>
-							<li class="tab" class="tab" ng-class="{ active: isSet2(2) }">
-								<a class="btn-tab" ng-click="setTab2(2)">Profile</a>
-							</li>
-							<li  class="tab" ng-class="{ active: isSet2(3) }">
-								<a class="btn-tab" href ng-click="setTab2(3)">Messages</a>
-							</li>
-						</ul>
-					</div>
-					<div >
-			
-				</div>
-
 				
-						<div ng-show="isSet2(1)">
-							<div class="highcharts-box" id="container"></div>
-
+					<div class="cont-chart">
+						<div class="list-tab"  id="my_Tab">
+							<ul>
+								<li class="tab"><a  class="btn-tab"  href="#my_Tab-1">% Presupuesto I+D</a></li>
+							</ul>
+							<div id="my_Tab-1">
+								<div class="highcharts-box" id="impInnID"></div>
+							</div>
 						</div>
-						<div ng-show="isSet2(2)">
-							<h1>Profile page</h1>
-							<p>Profile information</p>
-						</div>
-						<div ng-show="isSet2(3)">
-							<h1>Messages</h1>
-							<p> Some messages </p>
-						</div>
-
-					</div>-->
-				</div>
+					</div>
+				
 			</div>
 		</div>
 
 	</section>
 	<section>
 		<div class="row">
-			<div	class="col-xs-12 col-sm-12 col-md-12 col-lg-12">
+			<div	class="col-xs-12 col-sm-12 col-md-5 col-lg-5">
 				<div class="text-head"> 
 					<div class="header-box">
 						<P class="title1">Obstáculos para innovar e invertir en I+D.</P>
@@ -202,6 +180,22 @@
 					<p class="text1">******GRAFICO FACTORES NO INNOVACION*******</p>
 					<p class="text1">Uno de los principales obstáculos que las empresas entrevistadas enfrentan, es la falta de información sobre innovación, principalmente se obtiene desde internet. No perciben a las universidades o a los centros de investigación y desarrollo tecnológico, como fuentes de información para sus innovaciones. Parece un hecho lamentable, en el tanto el porcentaje mayor de I+D en el país, proviene de ese tipo de entidades, por lo que se hace evidente que es de vital importancia mejorar las vinculaciones con el sector empresarial.</p>
 				</div>
+			</div>
+			<div	class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
+				<div class="cont-chart">
+						<div class="list-tab"  id="tabsFactores">
+							<ul>
+								<li class="tab"><a  class="btn-tab"  href="#tabsFactores-1">Factores no innovar Innovadora</a></li>
+								<li class="tab"><a  class="btn-tab"  href="#tabsFactores-2">Factores no Innovar No Innovado</a></li>
+							</ul>
+							<div id="tabsFactores-1">
+								<div class="highcharts-box" id="factNoInn"></div>
+							</div>
+							<div id="tabsFactores-2">
+								<div class="highcharts-box" id="factNoInnNo"></div>
+							</div>
+						</div>
+					</div>
 			</div>
 		</div>
 		<div class="row">
@@ -217,14 +211,22 @@
 
 			<div	class="col-xs-12 col-sm-12 col-md-7 col-lg-7">
 				<div class="cont-chart">
-				</div>
+						<div class="list-tab"  id="myTabs">
+							<ul>
+								<li class="tab"><a  class="btn-tab"  href="#myTabs-1">Factores Alto No I+D</a></li>
+							</ul>
+							<div id="myTabs-1">
+								<div class="highcharts-box" id="noInn"></div>
+							</div>
+						</div>
+					</div>
 			</div>
 		</div>
 	</section>
 </div>
-<!--
+
 <iframe style="width:100%; height: 200px; overflow:hidden" id="myIframe" src="http://www.micit.go.cr/junar/footer.html" frameborder="0" frameborder="0" scrolling="no"></iframe>
--->
+
 <script type="text/javascript" src="./js/chart.js"></script>
 <link rel="stylesheet" type="text/css" href="./css/index.css">
 </body>
