@@ -43,8 +43,8 @@ app.controller("MainCtrl", function($scope) {
   };
   
 /*chartACTInn();
-chartACTInn2();*/
-impInn();
+chartACTInn2();
+impInn();*/
 impInnID();
 /*noInn() ;*/
 factNoInn();

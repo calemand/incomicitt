@@ -180,7 +180,7 @@ app.controller("MainCtrl", function($scope) {
         zoomType: 'x'
       },
       title: {
-        text: 'Costa Riva vs Latinoamérica'
+        text: 'Costa Rica vs Latinoamérica'
       },
       subtitle: {
         text: 'PIB vs ACT Paises',
