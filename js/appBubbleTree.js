@@ -17,7 +17,7 @@ var data = {
 		"shortLabel": "SCT",
 		"description": "<p class='text1'>Actividades relacionadas con la investigación y el desarrollo experimental que contribuyen a la generación, la difusión y la aplicación de los conocimientos científicos y tecnológicos. A continuación se detallan algunas de estas: </p><ul><l1>•	Bibliotecas, los archivos, los centros de información y documentación, los servicios de consulta, los centros de congresos científicos</li><l1>•	Museos de ciencias y/o tecnología, de los jardines botánicos y de los parques zoológicos</li><l1>•	Traducción y edición de libros y publicaciones periódicas de ciencia y tecnología</li><l1>•	Los levantamientos topográficos, geológicos e hidrológicos, las observaciones astronómicas, meteorológicas y sismológicas.</li><l1>•	La localización y determinación de recursos petroleros y minerales.</li><l1>•	Servicio de censos demográficos; las estadísticas de producción, distribución y consumo; los estudios de mercado; las estadísticas sociales y culturales.</li></ul>",
 		"color":"#0077bb",
-		"icon": "/bubbletree/assets/styles/icons/communication.svg",
+		"icon": "./bubbletree/assets/styles/icons/communication.svg",
 		"children" : [
 		{
 			"amount": 266.18,

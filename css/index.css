@@ -160,7 +160,9 @@ li{
 .navbar-default .navbar-nav>.active>a, .navbar-default .navbar-nav>.open>a {
    background: #000000 !important;
 }
-
+.text1 > a {
+  color: #fff;
+}
 /* 
 *
 *

@@ -32,7 +32,7 @@ app.controller("MainCtrl", function($scope) {
   };
   
  chartTipos();
-  chartProyectos();
+ /* chartProyectos();*/
   chart_ID_ACT();
   function chartTipos() {
     Highcharts.chart('containerTipos', {
